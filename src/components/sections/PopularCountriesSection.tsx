@@ -3,7 +3,12 @@ import { GetGrantCard } from '../GetGrantCard';
 import { Check } from 'lucide-react';
 import { motion } from 'motion/react';
 
-export function PopularCountriesSection() {
+interface PopularCountriesSectionProps {
+  onNavigate?: (page: string) => void;
+  onCloseSideNav?: () => void;
+}
+
+export function PopularCountriesSection({ onNavigate, onCloseSideNav }: PopularCountriesSectionProps) {
   const countries = [
     {
       id: 1,
@@ -119,7 +124,11 @@ export function PopularCountriesSection() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <GetGrantCard hoverable className="h-full">
+              <GetGrantCard
+                hoverable
+                className="h-full"
+                onClick={() => { onNavigate?.('country-detail'); onCloseSideNav?.(); }}
+              >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="text-5xl">{country.flag}</div>
                   <div className="flex-1">

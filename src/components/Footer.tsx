@@ -113,7 +113,7 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#6D7A89]">
-            <p>© 2024 GetGrant. Все права защищены.</p>
+            <p>© 2025 GetGrant. Все права защищены.</p>
             <div className="flex flex-wrap gap-6">
               <a href="#privacy" className="hover:text-[#FCD232] transition-colors">
                 Политика конфиденциальности
@@ -130,7 +130,7 @@ export function Footer() {
           {/* Licenses Info */}
           <div className="mt-6 pt-6 border-t border-white/10">
             <p className="text-xs text-[#6D7A89] text-center md:text-left">
-              Лицензия на образовательную деятельность № 123456 от 01.01.2020 | 
+              Лицензия на образовательную деятельность № 240000733 от 01.01.2020 | 
               Свидетельство об аккредитации № 654321 от 15.03.2021
             </p>
           </div>

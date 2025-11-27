@@ -6,7 +6,12 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { Clock, Users } from 'lucide-react';
 import { motion } from 'motion/react';
 
-export function PopularProgramsSection() {
+interface PopularProgramsSectionProps {
+  onNavigate?: (page: string) => void;
+  onCloseSideNav?: () => void;
+}
+
+export function PopularProgramsSection({ onNavigate, onCloseSideNav }: PopularProgramsSectionProps) {
   const programs = [
     {
       id: 1,
@@ -123,7 +128,15 @@ export function PopularProgramsSection() {
                 </GetGrantCardContent>
                 
                 <GetGrantCardFooter>
-                  <GetGrantButton variant="ghost" size="sm" className="w-full">
+                  <GetGrantButton
+                    variant="ghost"
+                    size="sm"
+                    className="w-full"
+                    onClick={() => {
+                      onNavigate?.('program-detail');
+                      onCloseSideNav?.();
+                    }}
+                  >
                     Подробнее
                   </GetGrantButton>
                 </GetGrantCardFooter>

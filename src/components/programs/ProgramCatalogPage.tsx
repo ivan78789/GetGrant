@@ -6,7 +6,12 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { Filter, X, Search, BookOpen, Clock, DollarSign, TrendingUp, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-export function ProgramCatalogPage() {
+interface ProgramCatalogPageProps {
+  onNavigate?: (page: string) => void;
+  onCloseSideNav?: () => void;
+}
+
+export function ProgramCatalogPage({ onNavigate, onCloseSideNav }: ProgramCatalogPageProps) {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedField, setSelectedField] = useState<string[]>([]);
   const [selectedLevel, setSelectedLevel] = useState<string[]>([]);
@@ -282,9 +287,17 @@ export function ProgramCatalogPage() {
                     </GetGrantCardContent>
 
                     <GetGrantCardFooter>
-                      <GetGrantButton variant="ghost" size="sm" className="w-full">
-                        Подробнее о программе
-                      </GetGrantButton>
+                        <GetGrantButton
+                          variant="ghost"
+                          size="sm"
+                          className="w-full"
+                          onClick={() => {
+                            onNavigate?.('program-detail');
+                            onCloseSideNav?.();
+                          }}
+                        >
+                          Подробнее о программе
+                        </GetGrantButton>
                     </GetGrantCardFooter>
                   </GetGrantCard>
                 </motion.div>

@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-export function UniversityPartnersSection() {
+interface UniversityPartnersSectionProps {
+  onNavigate?: (page: string) => void;
+  onCloseSideNav?: () => void;
+}
+
+export function UniversityPartnersSection({ onNavigate, onCloseSideNav }: UniversityPartnersSectionProps) {
   const partners = [
     { name: 'Harvard', abbr: 'H' },
     { name: 'MIT', abbr: 'MIT' },
@@ -51,6 +56,7 @@ export function UniversityPartnersSection() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               className="aspect-square bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 transition-all duration-300 group cursor-pointer border border-white/10"
+              onClick={() => { onNavigate?.('university-detail'); onCloseSideNav?.(); }}
             >
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-white group-hover:text-[#FCD232] transition-colors">

@@ -10,18 +10,44 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
-export function UniversityDetailPage() {
-  const university = {
-    name: 'Harvard University',
-    logo: 'H',
-    country: 'США',
-    city: 'Cambridge, MA',
-    image: 'https://images.unsplash.com/photo-1542843895-1b55d9f8ece8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXJ2YXJkJTIwdW5pdmVyc2l0eSUyMGNhbXB1c3xlbnwxfHx8fDE3NjQwNTY2NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    ranking: 1,
-    website: 'harvard.edu',
-    students: 23000,
-    acceptance: '4.5%'
+export function UniversityDetailPage({ universityId }: { universityId?: number | null }) {
+  const universities: Record<number, any> = {
+    1: {
+      name: 'Harvard University',
+      logo: 'H',
+      country: 'США',
+      city: 'Cambridge, MA',
+      image: 'https://images.unsplash.com/photo-1542843895-1b55d9f8ece8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+      ranking: 1,
+      website: 'harvard.edu',
+      students: 23000,
+      acceptance: '4.5%'
+    },
+    2: {
+      name: 'Oxford University',
+      logo: 'O',
+      country: 'Великобритания',
+      city: 'Oxford',
+      image: 'https://images.unsplash.com/photo-1702238230256-f798027de7c9?q=80&w=1080',
+      ranking: 2,
+      website: 'ox.ac.uk',
+      students: 24000,
+      acceptance: '17.5%'
+    },
+    3: {
+      name: 'Stanford University',
+      logo: 'S',
+      country: 'США',
+      city: 'Stanford, CA',
+      image: 'https://images.unsplash.com/photo-1762410281840-686c2d40cd42?q=80&w=1080',
+      ranking: 3,
+      website: 'stanford.edu',
+      students: 17000,
+      acceptance: '3.9%'
+    }
   };
+
+  const university = (universityId && universities[universityId]) ? universities[universityId] : universities[1];
 
   const overview = {
     description: 'Harvard University — старейший вуз США, основанный в 1636 году. Расположен в Кембридже, штат Массачусетс. Harvard входит в элитную группу университетов Ivy League и является одним из самых престижных учебных заведений мира.',

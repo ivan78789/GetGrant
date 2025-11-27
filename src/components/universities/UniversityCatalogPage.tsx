@@ -9,7 +9,13 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-export function UniversityCatalogPage() {
+interface UniversityCatalogPageProps {
+  onNavigate?: (page: string) => void;
+  onCloseSideNav?: () => void;
+  onSelectUniversity?: (id: number) => void;
+}
+
+export function UniversityCatalogPage({ onNavigate, onCloseSideNav, onSelectUniversity }: UniversityCatalogPageProps) {
   const [showFilters, setShowFilters] = useState(false);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
@@ -340,9 +346,20 @@ export function UniversityCatalogPage() {
                     </GetGrantCardContent>
 
                     <GetGrantCardFooter>
-                      <GetGrantButton variant="ghost" size="sm" className="w-full group">
+                      <GetGrantButton
+                        variant="ghost"
+                        size="sm"
+                        className="w-full group"
+                        onClick={() => {
+                          if (onSelectUniversity) {
+                            onSelectUniversity(university.id);
+                          } else {
+                            onNavigate?.('university-detail');
+                          }
+                          onCloseSideNav?.();
+                        }}
+                      >
                         Подробнее
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </GetGrantButton>
                     </GetGrantCardFooter>
                   </GetGrantCard>

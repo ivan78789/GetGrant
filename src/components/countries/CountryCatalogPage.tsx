@@ -4,7 +4,12 @@ import { GetGrantButton } from '../GetGrantButton';
 import { Check, TrendingUp, DollarSign, Home, Briefcase } from 'lucide-react';
 import { motion } from 'motion/react';
 
-export function CountryCatalogPage() {
+interface CountryCatalogPageProps {
+  onNavigate?: (page: string) => void;
+  onCloseSideNav?: () => void;
+}
+
+export function CountryCatalogPage({ onNavigate, onCloseSideNav }: CountryCatalogPageProps) {
   const countries = [
     {
       id: 1,
@@ -229,7 +234,15 @@ export function CountryCatalogPage() {
                     ))}
                   </div>
 
-                  <GetGrantButton variant="ghost" size="sm" className="w-full">
+                  <GetGrantButton
+                    variant="ghost"
+                    size="sm"
+                    className="w-full"
+                    onClick={() => {
+                      onNavigate?.('country-detail');
+                      onCloseSideNav?.();
+                    }}
+                  >
                     Подробнее о стране
                   </GetGrantButton>
                 </GetGrantCardContent>

@@ -36,6 +36,7 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
+  const [selectedUniversityId, setSelectedUniversityId] = useState<number | null>(null);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -67,7 +68,7 @@ export default function App() {
         return (
           <>
             <Header isAuthenticated={isAuthenticated} onNavigate={setCurrentPage} onToggleSideNav={() => setNavOpen((prev: boolean) => !prev)} onCloseSideNav={() => setNavOpen(false)} />
-            <UniversityCatalogPage />
+            <UniversityCatalogPage onNavigate={setCurrentPage} onCloseSideNav={() => setNavOpen(false)} onSelectUniversity={(id: number) => { setSelectedUniversityId(id); setCurrentPage('university-detail'); }} />
             <Footer />
           </>
         );
@@ -75,7 +76,7 @@ export default function App() {
         return (
           <>
             <Header isAuthenticated={isAuthenticated} onNavigate={setCurrentPage} onToggleSideNav={() => setNavOpen((prev: boolean) => !prev)} onCloseSideNav={() => setNavOpen(false)} />
-            <UniversityDetailPage />
+            <UniversityDetailPage universityId={selectedUniversityId} />
             <Footer />
           </>
         );
@@ -83,7 +84,7 @@ export default function App() {
         return (
           <>
             <Header isAuthenticated={isAuthenticated} onNavigate={setCurrentPage} onToggleSideNav={() => setNavOpen((prev: boolean) => !prev)} onCloseSideNav={() => setNavOpen(false)} />
-            <CountryCatalogPage />
+            <CountryCatalogPage onNavigate={setCurrentPage} onCloseSideNav={() => setNavOpen(false)} />
             <Footer />
           </>
         );
@@ -99,7 +100,7 @@ export default function App() {
         return (
           <>
             <Header isAuthenticated={isAuthenticated} onNavigate={setCurrentPage} onToggleSideNav={() => setNavOpen((prev: boolean) => !prev)} onCloseSideNav={() => setNavOpen(false)} />
-            <ProgramCatalogPage />
+            <ProgramCatalogPage onNavigate={setCurrentPage} onCloseSideNav={() => setNavOpen(false)} />
             <Footer />
           </>
         );
@@ -133,9 +134,9 @@ export default function App() {
             <main>
               <HeroSection />
               <WhyGetGrantSection />
-              <PopularProgramsSection />
-              <PopularCountriesSection />
-              <UniversityPartnersSection />
+              <PopularProgramsSection onNavigate={setCurrentPage} onCloseSideNav={() => setNavOpen(false)} />
+              <PopularCountriesSection onNavigate={setCurrentPage} onCloseSideNav={() => setNavOpen(false)} />
+              <UniversityPartnersSection onNavigate={setCurrentPage} onCloseSideNav={() => setNavOpen(false)} />
             </main>
             <Footer />
             {/* Mobile Sticky CTA */}
