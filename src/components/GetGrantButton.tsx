@@ -18,7 +18,7 @@ export function GetGrantButton({
   const baseStyles = 'font-medium transition-all duration-200 rounded-lg min-h-[44px] min-w-[44px]';
   
   const variants = {
-    primary: 'bg-[#FCD232] text-[#1A1A1A] hover:bg-[#e8c02e] active:bg-[#d4ad29] shadow-sm hover:shadow-md',
+    primary: 'bg-[#1055b2] text-white hover:bg-[#003b8a] active:bg-[#00306f] shadow-sm hover:shadow-md',
     secondary: 'bg-[#1A1A1A] text-white hover:bg-[#2a2a2a] active:bg-[#0a0a0a]',
     outline: 'border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#F5F5F5] active:bg-[#e5e5e5]',
     ghost: 'text-[#1A1A1A] hover:bg-[#F5F5F5] active:bg-[#e5e5e5]'

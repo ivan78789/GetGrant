@@ -59,7 +59,7 @@ export function UniversityPartnersSection({ onNavigate, onCloseSideNav }: Univer
               onClick={() => { onNavigate?.('university-detail'); onCloseSideNav?.(); }}
             >
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-white group-hover:text-[#FCD232] transition-colors">
+                <div className="text-2xl md:text-3xl font-bold text-white group-hover:text-[#1055b2] transition-colors">
                   {partner.abbr}
                 </div>
                 <div className="text-xs text-[#6D7A89] mt-1">{partner.name}</div>
@@ -77,19 +77,19 @@ export function UniversityPartnersSection({ onNavigate, onCloseSideNav }: Univer
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#FCD232] mb-2">50+</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#1055b2] mb-2">50+</div>
               <div className="text-sm text-[#6D7A89]">Университетов-партнёров</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#FCD232] mb-2">15+</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#1055b2] mb-2">15+</div>
               <div className="text-sm text-[#6D7A89]">Стран для обучения</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#FCD232] mb-2">500+</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#1055b2] mb-2">500+</div>
               <div className="text-sm text-[#6D7A89]">Поступивших студентов</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#FCD232] mb-2">95%</div>
+              <div className="text-3xl md:text-4xl font-bold text-[#1055b2] mb-2">95%</div>
               <div className="text-sm text-[#6D7A89]">Уровень успеха</div>
             </div>
           </div>

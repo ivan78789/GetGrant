@@ -105,7 +105,7 @@ export function ProgramCatalogPage({ onNavigate, onCloseSideNav }: ProgramCatalo
           <input
             type="text"
             placeholder="Название программы..."
-            className="w-full pl-10 pr-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FCD232]"
+            className="w-full pl-10 pr-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1055b2]"
           />
         </div>
       </div>
@@ -127,7 +127,7 @@ export function ProgramCatalogPage({ onNavigate, onCloseSideNav }: ProgramCatalo
                     setSelectedField(selectedField.filter(f => f !== field));
                   }
                 }}
-                className="w-4 h-4 border-[#1A1A1A]/20 rounded focus:ring-[#FCD232]"
+                className="w-4 h-4 border-[#1A1A1A]/20 rounded focus:ring-[#1055b2]"
               />
               <span className="text-sm text-[#1A1A1A]">{field}</span>
             </label>
@@ -152,7 +152,7 @@ export function ProgramCatalogPage({ onNavigate, onCloseSideNav }: ProgramCatalo
                     setSelectedLevel(selectedLevel.filter(l => l !== level));
                   }
                 }}
-                className="w-4 h-4 border-[#1A1A1A]/20 rounded focus:ring-[#FCD232]"
+                className="w-4 h-4 border-[#1A1A1A]/20 rounded focus:ring-[#1055b2]"
               />
               <span className="text-sm text-[#1A1A1A]">{level}</span>
             </label>
@@ -207,7 +207,7 @@ export function ProgramCatalogPage({ onNavigate, onCloseSideNav }: ProgramCatalo
                 Фильтры
               </GetGrantButton>
 
-              <select className="px-4 py-2 bg-white border border-[#1A1A1A]/10 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#FCD232] ml-auto">
+              <select className="px-4 py-2 bg-white border border-[#1A1A1A]/10 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1055b2] ml-auto">
                 <option>По популярности</option>
                 <option>По зарплате</option>
                 <option>По длительности</option>
@@ -260,7 +260,7 @@ export function ProgramCatalogPage({ onNavigate, onCloseSideNav }: ProgramCatalo
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-2 mb-4 p-3 bg-[#FCD232]/10 rounded-lg">
+                        <div className="flex items-center gap-2 mb-4 p-3 bg-[#1055b2]/10 rounded-lg">
                           <TrendingUp className="w-4 h-4 text-[#1A1A1A]" />
                           <div>
                             <div className="text-xs text-[#6D7A89]">Средняя зарплата</div>

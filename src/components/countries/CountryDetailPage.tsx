@@ -132,7 +132,7 @@ export function CountryDetailPage() {
             {advantages.map((advantage, index) => (
               <GetGrantCard key={index}>
                 <GetGrantCardContent>
-                  <div className="w-12 h-12 bg-[#FCD232] rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-[#1055b2] rounded-lg flex items-center justify-center mb-4">
                     <advantage.icon className="w-6 h-6 text-[#1A1A1A]" />
                   </div>
                   <h3 className="font-semibold text-[#1A1A1A] mb-2">{advantage.title}</h3>
@@ -163,7 +163,7 @@ export function CountryDetailPage() {
 
                 <div className="grid grid-cols-4 gap-4 items-center">
                   <div className="flex items-center gap-2">
-                    <Home className="w-4 h-4 text-[#FCD232]" />
+                    <Home className="w-4 h-4 text-[#1055b2]" />
                     <span className="text-sm">Аренда жилья</span>
                   </div>
                   <div className="text-center text-sm">{costOfLiving.rent.min}</div>
@@ -173,7 +173,7 @@ export function CountryDetailPage() {
 
                 <div className="grid grid-cols-4 gap-4 items-center">
                   <div className="flex items-center gap-2">
-                    <DollarSign className="w-4 h-4 text-[#FCD232]" />
+                    <DollarSign className="w-4 h-4 text-[#1055b2]" />
                     <span className="text-sm">Питание</span>
                   </div>
                   <div className="text-center text-sm">{costOfLiving.food.min}</div>
@@ -183,7 +183,7 @@ export function CountryDetailPage() {
 
                 <div className="grid grid-cols-4 gap-4 items-center">
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-[#FCD232]" />
+                    <MapPin className="w-4 h-4 text-[#1055b2]" />
                     <span className="text-sm">Транспорт</span>
                   </div>
                   <div className="text-center text-sm">{costOfLiving.transport.min}</div>
@@ -193,7 +193,7 @@ export function CountryDetailPage() {
 
                 <div className="grid grid-cols-4 gap-4 items-center">
                   <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-[#FCD232]" />
+                    <Clock className="w-4 h-4 text-[#1055b2]" />
                     <span className="text-sm">Коммунальные услуги</span>
                   </div>
                   <div className="text-center text-sm">{costOfLiving.utilities.min}</div>
@@ -285,7 +285,7 @@ export function CountryDetailPage() {
               <GetGrantCard key={index}>
                 <GetGrantCardContent>
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#FCD232] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#1055b2] rounded-lg flex items-center justify-center flex-shrink-0">
                       <FileText className="w-6 h-6 text-[#1A1A1A]" />
                     </div>
                     <div>
@@ -305,7 +305,7 @@ export function CountryDetailPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <GetGrantCard className="bg-gradient-to-br from-[#FCD232]/20 to-white text-center">
+          <GetGrantCard className="bg-gradient-to-br from-[#1055b2]/20 to-white text-center">
             <GetGrantCardContent className="p-12">
               <h2 className="text-3xl font-bold text-[#1A1A1A] mb-4">
                 Готовы начать обучение в {country.name}?

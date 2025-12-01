@@ -23,8 +23,8 @@ export function HeroSection() {
             className="space-y-8"
           >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#FCD232]/20 px-4 py-2 rounded-full">
-              <Star className="w-4 h-4 text-[#1A1A1A] fill-[#FCD232]" />
+            <div className="inline-flex items-center gap-2 bg-[#1055b2]/20 px-4 py-2 rounded-full">
+              <Star className="w-4 h-4 text-[#1A1A1A] fill-[#1055b2]" />
               <span className="text-sm font-medium text-[#1A1A1A]">
                 Лицензированный образовательный центр
               </span>
@@ -36,7 +36,7 @@ export function HeroSection() {
                 Поступи в зарубежный{' '}
                 <span className="relative inline-block">
                   <span className="relative z-10">университет</span>
-                  <span className="absolute bottom-2 left-0 w-full h-3 bg-[#FCD232] -z-0"></span>
+                  <span className="absolute bottom-2 left-0 w-full h-3 bg-[#1055b2] -z-0"></span>
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-[#6D7A89] max-w-xl">
@@ -98,7 +98,7 @@ export function HeroSection() {
                 className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-[#FCD232] rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#1055b2] rounded-full flex items-center justify-center">
                     <span className="text-2xl">🎓</span>
                   </div>
                   <div>
@@ -114,8 +114,8 @@ export function HeroSection() {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#FCD232] rounded-full blur-3xl opacity-20"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#FCD232] rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#1055b2] rounded-full blur-3xl opacity-20"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#1055b2] rounded-full blur-3xl opacity-20"></div>
           </motion.div>
         </div>
       </div>

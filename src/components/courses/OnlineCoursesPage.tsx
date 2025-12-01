@@ -144,7 +144,7 @@ export function OnlineCoursesPage() {
             {courses.map((course, index) => (
               <GetGrantCard key={index} hoverable>
                 <GetGrantCardContent>
-                  <div className="w-12 h-12 bg-[#FCD232] rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-[#1055b2] rounded-lg flex items-center justify-center mb-4">
                     <BookOpen className="w-6 h-6 text-[#1A1A1A]" />
                   </div>
                   <h3 className="font-semibold text-[#1A1A1A] mb-2">{course.title}</h3>
@@ -168,7 +168,7 @@ export function OnlineCoursesPage() {
                   <div className="flex items-center justify-between pt-4 border-t border-[#1A1A1A]/10">
                     <div>
                       <div className="flex items-center gap-1">
-                        <Star className="w-4 h-4 fill-[#FCD232] text-[#FCD232]" />
+                        <Star className="w-4 h-4 fill-[#1055b2] text-[#1055b2]" />
                         <span className="font-semibold">{course.rating}</span>
                       </div>
                     </div>
@@ -210,7 +210,7 @@ export function OnlineCoursesPage() {
 
                   <div className="flex items-center justify-center gap-2 mb-4">
                     <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-[#FCD232] text-[#FCD232]" />
+                      <Star className="w-4 h-4 fill-[#1055b2] text-[#1055b2]" />
                       <span className="font-semibold">{teacher.rating}</span>
                     </div>
                     <span className="text-[#6D7A89]">•</span>
@@ -296,8 +296,8 @@ export function OnlineCoursesPage() {
                       <div key={day} className="p-2 text-center font-semibold">
                         <div className="text-[#6D7A89] text-xs mb-1">{day}</div>
                         <div className={`w-8 h-8 mx-auto rounded-full flex items-center justify-center ${
-                          index === 2 ? 'bg-[#FCD232] text-[#1A1A1A]' : 'text-[#1A1A1A]'
-                        }`}>
+                            index === 2 ? 'bg-[#1055b2] text-white' : 'text-[#1A1A1A]'
+                          }`}>
                           {25 + index}
                         </div>
                       </div>
@@ -314,7 +314,7 @@ export function OnlineCoursesPage() {
                           return (
                             <div key={dayIndex} className="p-1">
                               {hasClass ? (
-                                <div className="bg-[#FCD232]/20 border border-[#FCD232] rounded p-2 cursor-pointer hover:bg-[#FCD232]/30 transition-colors">
+                                <div className="bg-[#1055b2]/20 border border-[#1055b2] rounded p-2 cursor-pointer hover:bg-[#1055b2]/30 transition-colors">
                                   <div className="text-xs font-medium text-[#1A1A1A] truncate">
                                     TOEFL Speaking
                                   </div>
@@ -323,7 +323,7 @@ export function OnlineCoursesPage() {
                                   </div>
                                 </div>
                               ) : (
-                                <div className="h-full border border-[#1A1A1A]/5 rounded hover:border-[#FCD232] transition-colors cursor-pointer" />
+                                <div className="h-full border border-[#1A1A1A]/5 rounded hover:border-[#1055b2] transition-colors cursor-pointer" />
                               )}
                             </div>
                           );
@@ -336,8 +336,8 @@ export function OnlineCoursesPage() {
 
               {/* Legend */}
               <div className="flex items-center gap-6 mt-6 pt-6 border-t border-[#1A1A1A]/10">
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-[#FCD232]/20 border border-[#FCD232] rounded"></div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 bg-[#1055b2]/20 border border-[#1055b2] rounded"></div>
                   <span className="text-sm text-[#6D7A89]">Занято</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -379,7 +379,7 @@ export function OnlineCoursesPage() {
               </label>
               <input
                 type="datetime-local"
-                className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FCD232]"
+                className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1055b2]"
               />
             </div>
 
@@ -387,7 +387,7 @@ export function OnlineCoursesPage() {
               <label className="block text-sm font-medium text-[#1A1A1A] mb-2">
                 Тип занятия
               </label>
-              <select className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FCD232]">
+              <select className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1055b2]">
                 <option>Индивидуальное занятие</option>
                 <option>Групповое занятие (2-4 человека)</option>
               </select>
@@ -400,11 +400,11 @@ export function OnlineCoursesPage() {
               <textarea
                 rows={3}
                 placeholder="Укажите тему или вопросы для обсуждения..."
-                className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FCD232]"
+                className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1055b2]"
               />
             </div>
 
-            <div className="bg-[#FCD232]/10 rounded-lg p-4">
+            <div className="bg-[#1055b2]/10 rounded-lg p-4">
               <div className="flex justify-between mb-2">
                 <span className="text-[#6D7A89]">Стоимость занятия:</span>
                 <span className="font-semibold text-[#1A1A1A]">{selectedTeacher.price}</span>

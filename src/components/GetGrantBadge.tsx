@@ -14,7 +14,7 @@ export function GetGrantBadge({
 }: GetGrantBadgeProps) {
   const variants = {
     default: 'bg-[#F5F5F5] text-[#1A1A1A]',
-    yellow: 'bg-[#FCD232] text-[#1A1A1A]',
+    yellow: 'bg-[#1055b2] text-white',
     outline: 'bg-transparent border border-[#1A1A1A] text-[#1A1A1A]',
     success: 'bg-green-100 text-green-800',
     warning: 'bg-orange-100 text-orange-800'

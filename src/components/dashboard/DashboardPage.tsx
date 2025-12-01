@@ -96,7 +96,7 @@ export function DashboardPage() {
       case 'completed':
         return <CheckCircle className="w-6 h-6 text-green-500" />;
       case 'in-progress':
-        return <Clock className="w-6 h-6 text-[#FCD232]" />;
+        return <Clock className="w-6 h-6 text-[#1055b2]" />;
       default:
         return <div className="w-6 h-6 rounded-full border-2 border-[#6D7A89]" />;
     }
@@ -218,7 +218,7 @@ export function DashboardPage() {
                   </div>
 
                   {/* Drag & Drop Area */}
-                  <div className="mt-4 border-2 border-dashed border-[#1A1A1A]/20 rounded-lg p-8 text-center hover:border-[#FCD232] transition-colors cursor-pointer">
+                  <div className="mt-4 border-2 border-dashed border-[#1A1A1A]/20 rounded-lg p-8 text-center hover:border-[#1055b2] transition-colors cursor-pointer">
                     <Upload className="w-8 h-8 text-[#6D7A89] mx-auto mb-2" />
                     <p className="text-sm text-[#1A1A1A] font-medium mb-1">
                       Перетащите файлы сюда или нажмите для выбора
@@ -251,7 +251,7 @@ export function DashboardPage() {
                         className="flex items-center justify-between p-4 bg-[#F5F5F5] rounded-lg"
                       >
                         <div className="flex items-center gap-4 flex-1">
-                          <div className="w-10 h-10 bg-[#FCD232] rounded-lg flex items-center justify-center">
+                          <div className="w-10 h-10 bg-[#1055b2] rounded-lg flex items-center justify-center">
                             <Video className="w-5 h-5 text-[#1A1A1A]" />
                           </div>
                           <div className="flex-1">
@@ -332,7 +332,7 @@ export function DashboardPage() {
                 
                 <GetGrantCardContent>
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3 p-3 bg-[#FCD232]/10 rounded-lg">
+                    <div className="flex items-center gap-3 p-3 bg-[#1055b2]/10 rounded-lg">
                       <Calendar className="w-5 h-5 text-[#1A1A1A]" />
                       <div className="flex-1">
                         <p className="text-sm font-medium text-[#1A1A1A]">Дедлайн заявки MIT</p>
@@ -373,7 +373,7 @@ export function DashboardPage() {
                         <span className="font-medium text-[#1A1A1A]">75%</span>
                       </div>
                       <div className="h-2 bg-[#F5F5F5] rounded-full overflow-hidden">
-                        <div className="h-full bg-[#FCD232]" style={{ width: '75%' }} />
+                        <div className="h-full bg-[#1055b2]" style={{ width: '75%' }} />
                       </div>
                     </div>
                     <div>

@@ -31,7 +31,7 @@ export function GetGrantInput({
           className={cn(
             'w-full px-4 py-3 min-h-[44px] bg-[#F5F5F5] border border-transparent rounded-lg',
             'text-[#1A1A1A] placeholder:text-[#6D7A89]',
-            'focus:outline-none focus:ring-2 focus:ring-[#FCD232] focus:border-transparent',
+            'focus:outline-none focus:ring-2 focus:ring-[#1055b2] focus:border-transparent',
             'transition-all duration-200',
             error && 'border-red-500 focus:ring-red-500',
             icon && 'pl-10',

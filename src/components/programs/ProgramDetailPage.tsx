@@ -120,7 +120,7 @@ export function ProgramDetailPage() {
 
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#FCD232] rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#60A5FA] rounded-lg flex items-center justify-center">
                     <Clock className="w-5 h-5 text-[#1A1A1A]" />
                   </div>
                   <div>
@@ -130,7 +130,7 @@ export function ProgramDetailPage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#FCD232] rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#60A5FA] rounded-lg flex items-center justify-center">
                     <TrendingUp className="w-5 h-5 text-[#1A1A1A]" />
                   </div>
                   <div>
@@ -140,7 +140,7 @@ export function ProgramDetailPage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#FCD232] rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#60A5FA] rounded-lg flex items-center justify-center">
                     <Users className="w-5 h-5 text-[#1A1A1A]" />
                   </div>
                   <div>
@@ -179,7 +179,7 @@ export function ProgramDetailPage() {
               <GetGrantCard key={index}>
                 <GetGrantCardContent>
                   <div className="flex items-start gap-3 mb-3">
-                    <Briefcase className="w-5 h-5 text-[#FCD232] mt-1" />
+                    <Briefcase className="w-5 h-5 text-[#60A5FA] mt-1" />
                     <div className="flex-1">
                       <h3 className="font-semibold text-[#1A1A1A] mb-1">{career.title}</h3>
                       <p className="text-sm text-[#6D7A89] mb-2">{career.description}</p>
@@ -211,7 +211,7 @@ export function ProgramDetailPage() {
               <div className="grid md:grid-cols-2 gap-3">
                 {skills.map((skill, index) => (
                   <div key={index} className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-[#FCD232] mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-[#60A5FA] mt-0.5 flex-shrink-0" />
                     <span className="text-[#1A1A1A]">{skill}</span>
                   </div>
                 ))}
@@ -233,7 +233,7 @@ export function ProgramDetailPage() {
               <GetGrantCard key={year.year}>
                 <GetGrantCardContent>
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 bg-[#FCD232] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 bg-[#60A5FA] rounded-lg flex items-center justify-center flex-shrink-0">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-[#1A1A1A]">{year.year}</div>
                         <div className="text-xs text-[#1A1A1A]">год</div>
@@ -268,13 +268,13 @@ export function ProgramDetailPage() {
             <GetGrantCard>
               <GetGrantCardContent>
                 <h3 className="font-semibold text-[#1A1A1A] mb-4 flex items-center gap-2">
-                  <Target className="w-5 h-5 text-[#FCD232]" />
+                  <Target className="w-5 h-5 text-[#60A5FA]" />
                   Минимальные требования
                 </h3>
                 <ul className="space-y-2">
                   {requirements.academic.map((req, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-[#FCD232] mt-0.5 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-[#60A5FA] mt-0.5 flex-shrink-0" />
                       <span className="text-sm text-[#1A1A1A]">{req}</span>
                     </li>
                   ))}
@@ -285,13 +285,13 @@ export function ProgramDetailPage() {
             <GetGrantCard>
               <GetGrantCardContent>
                 <h3 className="font-semibold text-[#1A1A1A] mb-4 flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-[#FCD232]" />
+                  <TrendingUp className="w-5 h-5 text-[#60A5FA]" />
                   Рекомендуется
                 </h3>
                 <ul className="space-y-2">
                   {requirements.recommended.map((req, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-[#FCD232] mt-0.5 flex-shrink-0" />
+                      <Check className="w-5 h-5 text-[#60A5FA] mt-0.5 flex-shrink-0" />
                       <span className="text-sm text-[#1A1A1A]">{req}</span>
                     </li>
                   ))}
@@ -344,7 +344,7 @@ export function ProgramDetailPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <GetGrantCard className="bg-gradient-to-br from-[#FCD232]/20 to-white text-center">
+          <GetGrantCard className="bg-gradient-to-br from-[#60A5FA]/20 to-white text-center">
             <GetGrantCardContent className="p-12">
               <h2 className="text-3xl font-bold text-[#1A1A1A] mb-4">
                 Заинтересовались программой?

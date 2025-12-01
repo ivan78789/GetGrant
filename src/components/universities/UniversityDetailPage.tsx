@@ -157,8 +157,8 @@ export function UniversityDetailPage({ universityId }: { universityId?: number |
             <h3 className="text-xl font-semibold text-[#1A1A1A] mb-4">Ключевые преимущества</h3>
             <div className="grid md:grid-cols-2 gap-3">
               {overview.highlights.map((highlight, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-[#FCD232] mt-0.5 flex-shrink-0" />
+                  <div key={index} className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-[#1055b2] mt-0.5 flex-shrink-0" />
                   <span className="text-[#1A1A1A]">{highlight}</span>
                 </div>
               ))}
@@ -171,7 +171,7 @@ export function UniversityDetailPage({ universityId }: { universityId?: number |
               {overview.faculties.map((faculty, index) => (
                 <GetGrantCard key={index}>
                   <div className="flex items-center gap-2">
-                    <GraduationCap className="w-5 h-5 text-[#FCD232]" />
+                    <GraduationCap className="w-5 h-5 text-[#1055b2]" />
                     <span className="text-sm text-[#1A1A1A]">{faculty}</span>
                   </div>
                 </GetGrantCard>
@@ -194,7 +194,7 @@ export function UniversityDetailPage({ universityId }: { universityId?: number |
               <ul className="space-y-2">
                 {requirements.academic.map((req, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-[#FCD232] mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-[#1055b2] mt-0.5 flex-shrink-0" />
                     <span className="text-[#1A1A1A]">{req}</span>
                   </li>
                 ))}
@@ -210,7 +210,7 @@ export function UniversityDetailPage({ universityId }: { universityId?: number |
               <ul className="space-y-2">
                 {requirements.language.map((req, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-[#FCD232] mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-[#1055b2] mt-0.5 flex-shrink-0" />
                     <span className="text-[#1A1A1A]">{req}</span>
                   </li>
                 ))}
@@ -226,7 +226,7 @@ export function UniversityDetailPage({ universityId }: { universityId?: number |
               <ul className="space-y-2">
                 {requirements.documents.map((doc, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-[#FCD232] mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-[#1055b2] mt-0.5 flex-shrink-0" />
                     <span className="text-[#1A1A1A]">{doc}</span>
                   </li>
                 ))}
@@ -245,7 +245,7 @@ export function UniversityDetailPage({ universityId }: { universityId?: number |
             <GetGrantCard key={index}>
               <GetGrantCardContent>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#FCD232] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#1055b2] rounded-lg flex items-center justify-center flex-shrink-0">
                     <Calendar className="w-6 h-6 text-[#1A1A1A]" />
                   </div>
                   <div className="flex-1">
@@ -266,7 +266,7 @@ export function UniversityDetailPage({ universityId }: { universityId?: number |
             </GetGrantCard>
           ))}
 
-          <div className="bg-[#FCD232]/10 border border-[#FCD232] rounded-xl p-6">
+          <div className="bg-[#1055b2]/10 border border-[#1055b2] rounded-xl p-6">
             <div className="flex items-start gap-3">
               <AlertCircle className="w-5 h-5 text-[#1A1A1A] mt-0.5" />
               <div>
@@ -320,7 +320,7 @@ export function UniversityDetailPage({ universityId }: { universityId?: number |
             </GetGrantCardContent>
           </GetGrantCard>
 
-          <GetGrantCard className="bg-[#FCD232]/10">
+          <GetGrantCard className="bg-[#1055b2]/10">
             <GetGrantCardContent>
               <h4 className="font-semibold text-[#1A1A1A] mb-3">Финансовая помощь</h4>
               <p className="text-sm text-[#1A1A1A] mb-4">
@@ -345,7 +345,7 @@ export function UniversityDetailPage({ universityId }: { universityId?: number |
               <div className="text-4xl font-bold text-[#1A1A1A]">5.0</div>
               <div className="flex gap-1 mt-2">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="w-4 h-4 fill-[#FCD232] text-[#FCD232]" />
+                  <Star key={star} className="w-4 h-4 fill-[#1055b2] text-[#1055b2]" />
                 ))}
               </div>
               <div className="text-sm text-[#6D7A89] mt-1">3 отзыва</div>
@@ -367,8 +367,8 @@ export function UniversityDetailPage({ universityId }: { universityId?: number |
                       <Star
                         key={star}
                         className={`w-4 h-4 ${
-                          star <= review.rating
-                            ? 'fill-[#FCD232] text-[#FCD232]'
+                              star <= review.rating
+                                ? 'fill-[#1055b2] text-[#1055b2]'
                             : 'text-[#6D7A89]'
                         }`}
                       />
@@ -497,7 +497,7 @@ export function UniversityDetailPage({ universityId }: { universityId?: number |
               <GetGrantCard key={index} hoverable>
                 <GetGrantCardContent>
                   <div className="flex items-start gap-3">
-                    <BookOpen className="w-5 h-5 text-[#FCD232] mt-1" />
+                    <BookOpen className="w-5 h-5 text-[#1055b2] mt-1" />
                     <div>
                       <h3 className="font-semibold text-[#1A1A1A] mb-1">{program.name}</h3>
                       <p className="text-sm text-[#6D7A89]">{program.level}</p>

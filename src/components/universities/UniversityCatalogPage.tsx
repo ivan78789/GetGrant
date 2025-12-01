@@ -118,7 +118,7 @@ export function UniversityCatalogPage({ onNavigate, onCloseSideNav, onSelectUniv
           <input
             type="text"
             placeholder="Название университета..."
-            className="w-full pl-10 pr-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FCD232]"
+            className="w-full pl-10 pr-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1055b2]"
           />
         </div>
       </div>
@@ -141,7 +141,7 @@ export function UniversityCatalogPage({ onNavigate, onCloseSideNav, onSelectUniv
                     setSelectedCountries(selectedCountries.filter(c => c !== country));
                   }
                 }}
-                className="w-4 h-4 border-[#1A1A1A]/20 rounded focus:ring-[#FCD232]"
+                className="w-4 h-4 border-[#1A1A1A]/20 rounded focus:ring-[#1055b2]"
               />
               <span className="text-sm text-[#1A1A1A]">{country}</span>
             </label>
@@ -167,7 +167,7 @@ export function UniversityCatalogPage({ onNavigate, onCloseSideNav, onSelectUniv
                     setSelectedTypes(selectedTypes.filter(t => t !== type));
                   }
                 }}
-                className="w-4 h-4 border-[#1A1A1A]/20 rounded focus:ring-[#FCD232]"
+                className="w-4 h-4 border-[#1A1A1A]/20 rounded focus:ring-[#1055b2]"
               />
               <span className="text-sm text-[#1A1A1A]">{type}</span>
             </label>
@@ -249,7 +249,7 @@ export function UniversityCatalogPage({ onNavigate, onCloseSideNav, onSelectUniv
               {/* Sort */}
               <div className="flex items-center gap-2">
                 <span className="text-sm text-[#6D7A89] hidden md:block">Сортировка:</span>
-                <select className="px-4 py-2 bg-white border border-[#1A1A1A]/10 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#FCD232]">
+                <select className="px-4 py-2 bg-white border border-[#1A1A1A]/10 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1055b2]">
                   <option>По рейтингу</option>
                   <option>По стоимости</option>
                   <option>По названию</option>
@@ -262,7 +262,7 @@ export function UniversityCatalogPage({ onNavigate, onCloseSideNav, onSelectUniv
                 <button
                   onClick={() => setViewMode('grid')}
                   className={`p-2 rounded transition-colors ${
-                    viewMode === 'grid' ? 'bg-[#FCD232]' : 'hover:bg-[#F5F5F5]'
+                    viewMode === 'grid' ? 'bg-[#1055b2]' : 'hover:bg-[#F5F5F5]'
                   }`}
                 >
                   <Grid className="w-4 h-4" />
@@ -270,7 +270,7 @@ export function UniversityCatalogPage({ onNavigate, onCloseSideNav, onSelectUniv
                 <button
                   onClick={() => setViewMode('list')}
                   className={`p-2 rounded transition-colors ${
-                    viewMode === 'list' ? 'bg-[#FCD232]' : 'hover:bg-[#F5F5F5]'
+                    viewMode === 'list' ? 'bg-[#1055b2]' : 'hover:bg-[#F5F5F5]'
                   }`}
                 >
                   <List className="w-4 h-4" />

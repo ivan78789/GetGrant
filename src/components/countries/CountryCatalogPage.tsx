@@ -217,7 +217,7 @@ export function CountryCatalogPage({ onNavigate, onCloseSideNav }: CountryCatalo
                     <h4 className="text-sm font-semibold text-[#1A1A1A] mb-2">Топ университеты:</h4>
                     <div className="flex flex-wrap gap-2">
                       {country.topUniversities.map((uni) => (
-                        <span key={uni} className="text-xs px-2 py-1 bg-[#FCD232]/20 text-[#1A1A1A] rounded">
+                        <span key={uni} className="text-xs px-2 py-1 bg-[#1055b2]/20 text-[#1A1A1A] rounded">
                           {uni}
                         </span>
                       ))}
@@ -228,7 +228,7 @@ export function CountryCatalogPage({ onNavigate, onCloseSideNav }: CountryCatalo
                   <div className="space-y-2 mb-6">
                     {country.benefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-[#FCD232] mt-0.5 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-[#1055b2] mt-0.5 flex-shrink-0" />
                         <span className="text-sm text-[#1A1A1A]">{benefit}</span>
                       </div>
                     ))}
@@ -258,7 +258,7 @@ export function CountryCatalogPage({ onNavigate, onCloseSideNav }: CountryCatalo
           viewport={{ once: true }}
           className="mt-16"
         >
-          <GetGrantCard className="text-center bg-gradient-to-br from-[#FCD232]/20 to-white">
+          <GetGrantCard className="text-center bg-gradient-to-br from-[#1055b2]/20 to-white">
             <GetGrantCardContent className="p-12">
               <h2 className="text-3xl font-bold text-[#1A1A1A] mb-4">
                 Не можете определиться?
