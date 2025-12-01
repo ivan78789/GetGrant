@@ -191,7 +191,6 @@ export function DashboardPage() {
                       <p className="text-sm text-[#6D7A89]">Загружайте и отслеживайте статус</p>
                     </div>
                     <GetGrantButton variant="primary" size="sm">
-                      <Upload className="w-4 h-4 mr-2" />
                       Загрузить
                     </GetGrantButton>
                   </div>
@@ -314,7 +313,6 @@ export function DashboardPage() {
                 
                 <GetGrantCardFooter>
                   <GetGrantButton variant="primary" size="sm" className="w-full">
-                    <MessageCircle className="w-4 h-4 mr-2" />
                     Написать
                   </GetGrantButton>
                 </GetGrantCardFooter>

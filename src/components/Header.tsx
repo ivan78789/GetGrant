@@ -24,7 +24,7 @@ export function Header({ isAuthenticated = false, onNavigate, onToggleSideNav, o
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-white/20 border-b border-[#1A1A1A]/10 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 bg-white border-b border-[#1A1A1A]/10">
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo (click -> home) */}
@@ -113,7 +113,7 @@ export function Header({ isAuthenticated = false, onNavigate, onToggleSideNav, o
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-[#1A1A1A]/10 bg-white/20 backdrop-blur-sm"
+            className="lg:hidden border-t border-[#1A1A1A]/10 bg-white"
           >
             <div className="container-custom py-4">
               <nav className="flex flex-col gap-2">

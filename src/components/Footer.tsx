@@ -59,15 +59,15 @@ export function Footer() {
             <div className="space-y-3">
               <a href="tel:+74951234567" className="flex items-center gap-2 text-[#6D7A89] hover:text-[#FCD232] transition-colors">
                 <Phone className="w-4 h-4" />
-                <span>+7 (495) 123-45-67</span>
+                <span>+996 554 123 456 </span>
               </a>
               <a href="mailto:info@getgrant.ru" className="flex items-center gap-2 text-[#6D7A89] hover:text-[#FCD232] transition-colors">
                 <Mail className="w-4 h-4" />
-                <span>info@getgrant.ru</span>
+                <span>info@getgrant.kg</span>
               </a>
               <div className="flex items-center gap-2 text-[#6D7A89]">
                 <MapPin className="w-4 h-4" />
-                <span>Москва, Тверская ул., 1</span>
+                <span>Бишкек, ул. Касыма Тыныстанова, 197/1</span>
               </div>
             </div>
           </div>
