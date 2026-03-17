@@ -212,6 +212,13 @@
   }
 }
 
+a,
+button,
+[role="button"],
+label {
+  cursor: pointer;
+}
+
 html {
   font-size: var(--font-size);
 }
@@ -247,119 +254,129 @@ html {
      and provide reasonable rgba variants so hover/active states work without rebuilding Tailwind. */
 
   :root {
-    --primary-r: 26; /* 0x1A */
-    --primary-g: 86; /* 0x56 */
-    --primary-b: 219; /* 0xDB */
-    --foreground-r: 17; /* 0x11 */
-    --foreground-g: 24; /* 0x18 */
-    --foreground-b: 39; /* 0x27 */
+    --primary-r: 26;
+    /* 0x1A */
+    --primary-g: 86;
+    /* 0x56 */
+    --primary-b: 219;
+    /* 0xDB */
+    --foreground-r: 17;
+    /* 0x11 */
+    --foreground-g: 24;
+    /* 0x18 */
+    --foreground-b: 39;
+    /* 0x27 */
   }
 
   .bg-primary {
     background-color: var(--primary) !important;
   }
+
   .text-primary-foreground {
     color: var(--primary-foreground) !important;
   }
+
   .bg-muted {
     background-color: var(--muted) !important;
   }
+
   .text-muted-foreground {
     color: var(--color-muted-foreground, var(--muted-foreground)) !important;
   }
+
   .bg-card {
     background-color: var(--card) !important;
   }
+
   .text-card-foreground {
     color: var(--card-foreground) !important;
   }
+
   .text-foreground {
     color: var(--foreground) !important;
   }
+
   .bg-background {
     background-color: var(--background) !important;
   }
+
   .border-border {
     border-color: var(--border) !important;
   }
 
   /* Opacity variants used in templates */
   .bg-primary\/10 {
-    background-color: rgba(
-      var(--primary-r),
-      var(--primary-g),
-      var(--primary-b),
-      0.1
-    ) !important;
+    background-color: rgba(var(--primary-r),
+        var(--primary-g),
+        var(--primary-b),
+        0.1) !important;
   }
+
   .bg-primary\/20 {
-    background-color: rgba(
-      var(--primary-r),
-      var(--primary-g),
-      var(--primary-b),
-      0.2
-    ) !important;
+    background-color: rgba(var(--primary-r),
+        var(--primary-g),
+        var(--primary-b),
+        0.2) !important;
   }
+
   .bg-primary\/90 {
-    background-color: rgba(
-      var(--primary-r),
-      var(--primary-g),
-      var(--primary-b),
-      0.9
-    ) !important;
+    background-color: rgba(var(--primary-r),
+        var(--primary-g),
+        var(--primary-b),
+        0.9) !important;
   }
+
   .bg-primary\/80 {
-    background-color: rgba(
-      var(--primary-r),
-      var(--primary-g),
-      var(--primary-b),
-      0.8
-    ) !important;
+    background-color: rgba(var(--primary-r),
+        var(--primary-g),
+        var(--primary-b),
+        0.8) !important;
   }
+
   .border-primary\/15 {
-    border-color: rgba(
-      var(--primary-r),
-      var(--primary-g),
-      var(--primary-b),
-      0.15
-    ) !important;
+    border-color: rgba(var(--primary-r),
+        var(--primary-g),
+        var(--primary-b),
+        0.15) !important;
   }
+
   .border-primary\/20 {
-    border-color: rgba(
-      var(--primary-r),
-      var(--primary-g),
-      var(--primary-b),
-      0.2
-    ) !important;
+    border-color: rgba(var(--primary-r),
+        var(--primary-g),
+        var(--primary-b),
+        0.2) !important;
   }
 
   .text-foreground\/90 {
-    color: rgba(
-      var(--foreground-r),
-      var(--foreground-g),
-      var(--foreground-b),
-      0.9
-    ) !important;
+    color: rgba(var(--foreground-r),
+        var(--foreground-g),
+        var(--foreground-b),
+        0.9) !important;
   }
 
   /* Hover/active shortcuts used in components */
   .hover\\:bg-primary\/90:hover {
-    background-color: rgba(
-      var(--primary-r),
-      var(--primary-g),
-      var(--primary-b),
-      0.9
-    ) !important;
+    background-color: rgba(var(--primary-r),
+        var(--primary-g),
+        var(--primary-b),
+        0.9) !important;
   }
+
   .active\\:bg-primary\/80:active {
-    background-color: rgba(
-      var(--primary-r),
-      var(--primary-g),
-      var(--primary-b),
-      0.8
-    ) !important;
+    background-color: rgba(var(--primary-r),
+        var(--primary-g),
+        var(--primary-b),
+        0.8) !important;
   }
+
   .hover\\:bg-muted:hover {
     background-color: var(--muted) !important;
   }
+}
+
+a,
+button,
+[role="button"],
+label {
+  cursor: pointer;
 }
