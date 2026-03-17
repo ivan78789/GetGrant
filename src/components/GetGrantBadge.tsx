@@ -13,9 +13,9 @@ export function GetGrantBadge({
   className 
 }: GetGrantBadgeProps) {
   const variants = {
-    default: 'bg-[#F5F5F5] text-[#1A1A1A]',
-    yellow: 'bg-[#FCD232] text-[#1A1A1A]',
-    outline: 'bg-transparent border border-[#1A1A1A] text-[#1A1A1A]',
+    default: 'bg-muted text-foreground',
+    yellow: 'bg-primary text-primary-foreground',
+    outline: 'bg-transparent border border-border text-foreground',
     success: 'bg-green-100 text-green-800',
     warning: 'bg-orange-100 text-orange-800'
   };

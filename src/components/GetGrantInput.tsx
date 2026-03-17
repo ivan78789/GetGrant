@@ -17,21 +17,21 @@ export function GetGrantInput({
   return (
     <div className="w-full">
       {label && (
-        <label className="block mb-2 text-sm text-[#1A1A1A]">
+        <label className="block mb-2 text-sm text-foreground">
           {label}
         </label>
       )}
       <div className="relative">
         {icon && (
-          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6D7A89]">
+          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
             {icon}
           </div>
         )}
         <input
           className={cn(
-            'w-full px-4 py-3 min-h-[44px] bg-[#F5F5F5] border border-transparent rounded-lg',
-            'text-[#1A1A1A] placeholder:text-[#6D7A89]',
-            'focus:outline-none focus:ring-2 focus:ring-[#FCD232] focus:border-transparent',
+            'w-full px-4 py-3 min-h-[44px] bg-input-background border border-transparent rounded-lg',
+            'text-foreground placeholder:text-muted-foreground',
+            'focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent',
             'transition-all duration-200',
             error && 'border-red-500 focus:ring-red-500',
             icon && 'pl-10',

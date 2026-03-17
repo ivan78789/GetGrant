@@ -86,3 +86,4 @@ src/
 
 Консультационная форма в фронтенде отправляет POST-запрос на `"${VITE_API_BASE_URL}/api/consultation"`.
 # GetGrant
+# GetGrant - Educational Platform

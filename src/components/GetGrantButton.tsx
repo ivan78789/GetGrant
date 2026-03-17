@@ -8,38 +8,36 @@ interface GetGrantButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
   children: React.ReactNode;
 }
 
-export function GetGrantButton({ 
-  variant = 'primary', 
-  size = 'md', 
+export function GetGrantButton({
+  variant = 'primary',
+  size = 'md',
   className,
   children,
-  ...props 
+  ...props
 }: GetGrantButtonProps) {
-  const baseStyles = 'font-medium transition-all duration-200 rounded-lg min-h-[44px] min-w-[44px]';
-  
+  const baseStyles =
+    'font-medium transition-all duration-200 rounded-lg min-h-[44px] min-w-[44px]';
+
   const variants = {
-    primary: 'bg-[#FCD232] text-[#1A1A1A] hover:bg-[#e8c02e] active:bg-[#d4ad29] shadow-sm hover:shadow-md',
-    secondary: 'bg-[#1A1A1A] text-white hover:bg-[#2a2a2a] active:bg-[#0a0a0a]',
-    outline: 'border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#F5F5F5] active:bg-[#e5e5e5]',
-    ghost: 'text-[#1A1A1A] hover:bg-[#F5F5F5] active:bg-[#e5e5e5]'
+    primary:
+      'bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/80 shadow-sm hover:shadow-md',
+    secondary:
+      'bg-secondary text-secondary-foreground hover:bg-secondary/90 active:bg-secondary/80',
+    outline:
+      'border-2 border-primary text-primary hover:bg-primary/5 active:bg-primary/10',
+    ghost: 'text-foreground hover:bg-muted active:bg-muted/80',
   };
 
   const sizes = {
     sm: 'px-4 py-2 text-sm',
     md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg'
+    lg: 'px-8 py-4 text-lg',
   };
 
   return (
     <button
-      className={cn(
-        baseStyles,
-        variants[variant],
-        sizes[size],
-        className
-      )}
-      {...props}
-    >
+      className={cn(baseStyles, variants[variant], sizes[size], className)}
+      {...props}>
       {children}
     </button>
   );

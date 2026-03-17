@@ -55,17 +55,17 @@ export function GetGrantModal({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               className={cn(
-                'bg-white rounded-2xl shadow-2xl w-full relative',
+                'bg-card text-card-foreground rounded-2xl shadow-2xl w-full relative border border-border',
                 sizes[size],
                 className
               )}
             >
               {title && (
-                <div className="flex items-center justify-between p-6 border-b border-[#1A1A1A]/10">
-                  <h3 className="text-xl font-semibold text-[#1A1A1A]">{title}</h3>
+                <div className="flex items-center justify-between p-6 border-b border-border">
+                  <h3 className="text-xl font-semibold text-foreground">{title}</h3>
                   <button
                     onClick={onClose}
-                    className="p-2 hover:bg-[#F5F5F5] rounded-lg transition-colors"
+                    className="p-2 hover:bg-muted rounded-lg transition-colors"
                   >
                     <X className="w-5 h-5" />
                   </button>
@@ -74,7 +74,7 @@ export function GetGrantModal({
               {!title && (
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 p-2 hover:bg-[#F5F5F5] rounded-lg transition-colors z-10"
+                  className="absolute top-4 right-4 p-2 hover:bg-muted rounded-lg transition-colors z-10"
                 >
                   <X className="w-5 h-5" />
                 </button>

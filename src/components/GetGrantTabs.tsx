@@ -18,7 +18,7 @@ export function GetGrantTabs({ tabs, defaultTab, className }: GetGrantTabsProps)
 
   return (
     <div className={cn('w-full', className)}>
-      <div className="border-b border-[#1A1A1A]/10">
+      <div className="border-b border-border">
         <div className="flex gap-2 overflow-x-auto scrollbar-hide">
           {tabs.map((tab) => (
             <button
@@ -28,8 +28,8 @@ export function GetGrantTabs({ tabs, defaultTab, className }: GetGrantTabsProps)
                 'px-6 py-3 font-medium text-sm transition-all duration-200',
                 'border-b-2 whitespace-nowrap min-h-[44px]',
                 activeTab === tab.id
-                  ? 'border-[#FCD232] text-[#1A1A1A]'
-                  : 'border-transparent text-[#6D7A89] hover:text-[#1A1A1A] hover:border-[#1A1A1A]/20'
+                  ? 'border-primary text-foreground'
+                  : 'border-transparent text-muted-foreground hover:text-foreground hover:border-border'
               )}
             >
               {tab.label}

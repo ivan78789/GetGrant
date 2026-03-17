@@ -3,8 +3,10 @@ import { GetGrantButton } from '../GetGrantButton';
 import { Star } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { motion } from 'motion/react';
+import { useConsultation } from '../../context/ConsultationContext';
 
 export function HeroSection() {
+  const { openConsultation } = useConsultation();
   const stats = [
     { value: '500+', label: 'Поступивших студентов' },
     { value: '50+', label: 'Университетов-партнёров' },
@@ -12,7 +14,7 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-white to-[#F5F5F5] overflow-hidden">
+    <section className="relative bg-gradient-to-br from-background to-muted overflow-hidden">
       <div className="container-custom py-16 md:py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
@@ -23,23 +25,23 @@ export function HeroSection() {
             className="space-y-8"
           >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#FCD232]/20 px-4 py-2 rounded-full">
-              <Star className="w-4 h-4 text-[#1A1A1A] fill-[#FCD232]" />
-              <span className="text-sm font-medium text-[#1A1A1A]">
+            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/15">
+              <Star className="w-4 h-4 text-primary fill-primary" />
+              <span className="text-sm font-medium text-foreground">
                 Лицензированный образовательный центр
               </span>
             </div>
 
             {/* Heading */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1A1A] leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 Поступи в зарубежный{' '}
                 <span className="relative inline-block">
                   <span className="relative z-10">университет</span>
-                  <span className="absolute bottom-2 left-0 w-full h-3 bg-[#FCD232] -z-0"></span>
+                  <span className="absolute bottom-2 left-0 w-full h-3 bg-primary/20 -z-0"></span>
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-[#6D7A89] max-w-xl">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
                 Профессиональная подготовка и полное сопровождение для учеников 9–11 классов. 
                 От выбора университета до успешного поступления.
               </p>
@@ -47,7 +49,12 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <GetGrantButton variant="primary" size="lg" className="group">
+              <GetGrantButton
+                variant="primary"
+                size="lg"
+                className="group"
+                onClick={() => openConsultation({ source: 'hero-cta' })}
+              >
                 Получить консультацию
               </GetGrantButton>
               <GetGrantButton variant="outline" size="lg">
@@ -56,7 +63,7 @@ export function HeroSection() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[#1A1A1A]/10">
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -65,10 +72,10 @@ export function HeroSection() {
                   transition={{ delay: 0.3 + index * 0.1 }}
                   className="space-y-1"
                 >
-                  <div className="text-2xl md:text-3xl font-bold text-[#1A1A1A]">
+                  <div className="text-2xl md:text-3xl font-bold text-foreground">
                     {stat.value}
                   </div>
-                  <div className="text-xs md:text-sm text-[#6D7A89]">
+                  <div className="text-xs md:text-sm text-muted-foreground">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -95,17 +102,17 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
-                className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl"
+                className="absolute bottom-8 left-8 right-8 bg-background/90 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-border"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-[#FCD232] rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                     <span className="text-2xl">🎓</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-[#1A1A1A]">
+                    <div className="font-semibold text-foreground">
                       Индивидуальный менеджер
                     </div>
-                    <div className="text-sm text-[#6D7A89]">
+                    <div className="text-sm text-muted-foreground">
                       Персональное сопровождение 24/7
                     </div>
                   </div>
@@ -114,8 +121,8 @@ export function HeroSection() {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#FCD232] rounded-full blur-3xl opacity-20"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#FCD232] rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary rounded-full blur-3xl opacity-20"></div>
           </motion.div>
         </div>
       </div>

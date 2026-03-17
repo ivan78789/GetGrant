@@ -1,0 +1,587 @@
+import type { ProgramDetail } from '../../types/program';
+
+export const programDetails: Record<number, ProgramDetail> = {
+  1: {
+    id: 1,
+    name: 'Computer Science',
+    field: 'Технологии',
+    level: 'Bachelor of Science (BS)',
+    duration: '4 года',
+    avgSalary: '$85,000',
+    universities: 150,
+    popular: true,
+    image: 'https://images.unsplash.com/photo-1611648694931-1aeda329f9da',
+    description:
+      'Computer Science — изучение вычислительных систем, программирования и алгоритмов. Программа готовит специалистов для работы в технологических компаниях, стартапах и исследовательских центрах.',
+    careers: [
+      {
+        title: 'Software Engineer',
+        salary: '$110,000',
+        demand: 'Очень высокий',
+        description: 'Разработка программного обеспечения',
+      },
+      {
+        title: 'Data Scientist',
+        salary: '$120,000',
+        demand: 'Очень высокий',
+        description: 'Анализ данных и ML модели',
+      },
+      {
+        title: 'AI/ML Engineer',
+        salary: '$130,000',
+        demand: 'Высокий',
+        description: 'Системы искусственного интеллекта',
+      },
+      {
+        title: 'Full Stack Developer',
+        salary: '$100,000',
+        demand: 'Очень высокий',
+        description: 'Фронтенд и бэкенд разработка',
+      },
+      {
+        title: 'DevOps Engineer',
+        salary: '$115,000',
+        demand: 'Высокий',
+        description: 'Автоматизация и деплой',
+      },
+      {
+        title: 'Cybersecurity',
+        salary: '$105,000',
+        demand: 'Высокий',
+        description: 'Защита систем и данных',
+      },
+    ],
+    skills: [
+      'Программирование (Python, Java, C++)',
+      'Алгоритмы и структуры данных',
+      'Базы данных и SQL',
+      'Веб-разработка',
+      'Машинное обучение',
+      'Git',
+      'Облачные технологии',
+      'Математика и статистика',
+    ],
+    coursework: [
+      {
+        year: 1,
+        courses: [
+          'Основы программирования',
+          'Дискретная математика',
+          'Линейная алгебра',
+          'Введение в CS',
+        ],
+      },
+      {
+        year: 2,
+        courses: [
+          'Структуры данных',
+          'Алгоритмы',
+          'Компьютерная архитектура',
+          'Базы данных',
+        ],
+      },
+      {
+        year: 3,
+        courses: [
+          'Операционные системы',
+          'Компьютерные сети',
+          'Искусственный интеллект',
+          'Web-разработка',
+        ],
+      },
+      {
+        year: 4,
+        courses: [
+          'Машинное обучение',
+          'Распределенные системы',
+          'Капстоун проект',
+          'Элективы',
+        ],
+      },
+    ],
+    requirements: {
+      academic: ['GPA минимум 3.5', 'Сильная математика', 'SAT Math: 700+'],
+      recommended: [
+        'AP Computer Science',
+        'AP Calculus',
+        'Проекты по программированию',
+        'Хакатоны',
+      ],
+    },
+    topUniversities: [
+      { name: 'MIT', ranking: 1, acceptance: '6.7%', tuition: '$55,000' },
+      { name: 'Stanford', ranking: 2, acceptance: '3.9%', tuition: '$56,000' },
+      {
+        name: 'Carnegie Mellon',
+        ranking: 3,
+        acceptance: '15%',
+        tuition: '$58,000',
+      },
+      {
+        name: 'UC Berkeley',
+        ranking: 4,
+        acceptance: '14%',
+        tuition: '$45,000',
+      },
+    ],
+  },
+  2: {
+    id: 2,
+    name: 'Business Administration',
+    field: 'Бизнес',
+    level: 'Bachelor of Business Administration (BBA)',
+    duration: '4 года',
+    avgSalary: '$65,000',
+    universities: 200,
+    popular: true,
+    image: 'https://images.unsplash.com/photo-1665979738279-bd2441290e02',
+    description:
+      'Business Administration охватывает управление, финансы, маркетинг и стратегию. Программа готовит лидеров для корпоративного мира и предпринимательства.',
+    careers: [
+      {
+        title: 'Business Analyst',
+        salary: '$75,000',
+        demand: 'Высокий',
+        description: 'Анализ бизнес-процессов',
+      },
+      {
+        title: 'Product Manager',
+        salary: '$110,000',
+        demand: 'Очень высокий',
+        description: 'Управление продуктом',
+      },
+      {
+        title: 'Financial Analyst',
+        salary: '$85,000',
+        demand: 'Высокий',
+        description: 'Финансовый анализ',
+      },
+      {
+        title: 'Marketing Manager',
+        salary: '$80,000',
+        demand: 'Средний',
+        description: 'Управление маркетингом',
+      },
+      {
+        title: 'Entrepreneur',
+        salary: '$90,000+',
+        demand: 'Высокий',
+        description: 'Собственный бизнес',
+      },
+      {
+        title: 'Consultant',
+        salary: '$95,000',
+        demand: 'Высокий',
+        description: 'Бизнес-консалтинг',
+      },
+    ],
+    skills: [
+      'Финансовый анализ',
+      'Стратегическое мышление',
+      'Управление проектами',
+      'Маркетинг и продажи',
+      'Лидерство',
+      'Excel и PowerPoint',
+      'Переговоры',
+      'Бухгалтерский учёт',
+    ],
+    coursework: [
+      {
+        year: 1,
+        courses: [
+          'Введение в бизнес',
+          'Микроэкономика',
+          'Бухгалтерский учёт',
+          'Деловое письмо',
+        ],
+      },
+      {
+        year: 2,
+        courses: ['Финансы', 'Маркетинг', 'Менеджмент', 'Статистика'],
+      },
+      {
+        year: 3,
+        courses: [
+          'Стратегия',
+          'Операционный менеджмент',
+          'Бизнес-право',
+          'Международный бизнес',
+        ],
+      },
+      {
+        year: 4,
+        courses: [
+          'Entrepreneurship',
+          'Бизнес-аналитика',
+          'Лидерство',
+          'Капстоун проект',
+        ],
+      },
+    ],
+    requirements: {
+      academic: ['GPA минимум 3.2', 'SAT: 1200+', 'Опыт лидерства'],
+      recommended: [
+        'AP Economics',
+        'Волонтёрство',
+        'Стажировки',
+        'Школьный бизнес-клуб',
+      ],
+    },
+    topUniversities: [
+      {
+        name: 'Wharton (UPenn)',
+        ranking: 1,
+        acceptance: '8%',
+        tuition: '$60,000',
+      },
+      {
+        name: 'Harvard Business',
+        ranking: 2,
+        acceptance: '9%',
+        tuition: '$73,000',
+      },
+      {
+        name: 'Booth (Chicago)',
+        ranking: 3,
+        acceptance: '24%',
+        tuition: '$72,000',
+      },
+      {
+        name: 'Kellogg (NW)',
+        ranking: 4,
+        acceptance: '25%',
+        tuition: '$71,000',
+      },
+    ],
+  },
+  3: {
+    id: 3,
+    name: 'Medicine',
+    field: 'Медицина',
+    level: 'Doctor of Medicine (MD)',
+    duration: '4 года (Pre-Med) + 4 года (Med School)',
+    avgSalary: '$200,000',
+    universities: 80,
+    popular: false,
+    image: 'https://images.unsplash.com/photo-1712782390367-6d9a2843d893',
+    description:
+      'Медицина — одна из самых престижных и сложных программ. Включает Pre-Med подготовку, медицинскую школу, резидентуру и специализацию.',
+    careers: [
+      {
+        title: 'General Practitioner',
+        salary: '$220,000',
+        demand: 'Очень высокий',
+        description: 'Врач общей практики',
+      },
+      {
+        title: 'Surgeon',
+        salary: '$350,000',
+        demand: 'Высокий',
+        description: 'Хирург',
+      },
+      {
+        title: 'Psychiatrist',
+        salary: '$250,000',
+        demand: 'Очень высокий',
+        description: 'Психиатр',
+      },
+      {
+        title: 'Radiologist',
+        salary: '$400,000',
+        demand: 'Высокий',
+        description: 'Радиолог',
+      },
+      {
+        title: 'Medical Researcher',
+        salary: '$100,000',
+        demand: 'Средний',
+        description: 'Медицинские исследования',
+      },
+      {
+        title: 'Anesthesiologist',
+        salary: '$370,000',
+        demand: 'Высокий',
+        description: 'Анестезиолог',
+      },
+    ],
+    skills: [
+      'Биология и химия',
+      'Анатомия и физиология',
+      'Клиническое мышление',
+      'Коммуникация с пациентами',
+      'Медицинская этика',
+      'Исследовательские навыки',
+      'Работа под давлением',
+      'Командная работа',
+    ],
+    coursework: [
+      { year: 1, courses: ['Биология', 'Химия', 'Физика', 'Психология'] },
+      {
+        year: 2,
+        courses: ['Органическая химия', 'Биохимия', 'Статистика', 'Социология'],
+      },
+      {
+        year: 3,
+        courses: ['Анатомия', 'Физиология', 'Патология', 'Фармакология'],
+      },
+      {
+        year: 4,
+        courses: [
+          'Клинические ротации',
+          'MCAT подготовка',
+          'Research',
+          'Подача в Med School',
+        ],
+      },
+    ],
+    requirements: {
+      academic: ['GPA минимум 3.7', 'MCAT: 515+', 'Волонтёрство в больнице'],
+      recommended: [
+        'AP Biology',
+        'AP Chemistry',
+        'Research experience',
+        'Shadowing врача',
+      ],
+    },
+    topUniversities: [
+      {
+        name: 'Harvard Medical',
+        ranking: 1,
+        acceptance: '3.3%',
+        tuition: '$65,000',
+      },
+      {
+        name: 'Johns Hopkins',
+        ranking: 2,
+        acceptance: '6%',
+        tuition: '$62,000',
+      },
+      {
+        name: 'Stanford Medicine',
+        ranking: 3,
+        acceptance: '2.3%',
+        tuition: '$63,000',
+      },
+      { name: 'Mayo Clinic', ranking: 4, acceptance: '2%', tuition: '$58,000' },
+    ],
+  },
+  4: {
+    id: 4,
+    name: 'Engineering',
+    field: 'Инженерия',
+    level: 'Bachelor of Engineering (BE)',
+    duration: '4 года',
+    avgSalary: '$75,000',
+    universities: 180,
+    popular: true,
+    image: 'https://images.unsplash.com/photo-1611648694931-1aeda329f9da',
+    description:
+      'Инженерия охватывает механику, электротехнику, гражданское строительство и многое другое. Выпускники востребованы в промышленности, строительстве и технологиях.',
+    careers: [
+      {
+        title: 'Mechanical Engineer',
+        salary: '$90,000',
+        demand: 'Высокий',
+        description: 'Проектирование машин и систем',
+      },
+      {
+        title: 'Civil Engineer',
+        salary: '$85,000',
+        demand: 'Высокий',
+        description: 'Строительство и инфраструктура',
+      },
+      {
+        title: 'Electrical Engineer',
+        salary: '$95,000',
+        demand: 'Очень высокий',
+        description: 'Электрические системы',
+      },
+      {
+        title: 'Aerospace Engineer',
+        salary: '$115,000',
+        demand: 'Средний',
+        description: 'Авиация и космос',
+      },
+      {
+        title: 'Chemical Engineer',
+        salary: '$100,000',
+        demand: 'Высокий',
+        description: 'Химические процессы',
+      },
+      {
+        title: 'Systems Engineer',
+        salary: '$105,000',
+        demand: 'Высокий',
+        description: 'Интеграция сложных систем',
+      },
+    ],
+    skills: [
+      'Математика и физика',
+      'CAD моделирование',
+      'Термодинамика',
+      'Сопротивление материалов',
+      'Программирование (MATLAB)',
+      'Управление проектами',
+      'Анализ данных',
+      'Командная работа',
+    ],
+    coursework: [
+      {
+        year: 1,
+        courses: ['Математика I', 'Физика', 'Химия', 'Введение в инженерию'],
+      },
+      {
+        year: 2,
+        courses: [
+          'Математика II',
+          'Термодинамика',
+          'Механика',
+          'CAD проектирование',
+        ],
+      },
+      {
+        year: 3,
+        courses: [
+          'Теория машин',
+          'Электротехника',
+          'Материаловедение',
+          'Гидравлика',
+        ],
+      },
+      {
+        year: 4,
+        courses: [
+          'Дипломный проект',
+          'Управление проектами',
+          'Профильные элективы',
+          'Стажировка',
+        ],
+      },
+    ],
+    requirements: {
+      academic: ['GPA минимум 3.4', 'SAT Math: 720+', 'AP Physics или AP Calc'],
+      recommended: [
+        'AP Chemistry',
+        'Робототехника',
+        'Олимпиады по физике',
+        'Практика на заводе',
+      ],
+    },
+    topUniversities: [
+      { name: 'MIT', ranking: 1, acceptance: '6.7%', tuition: '$55,000' },
+      { name: 'Caltech', ranking: 2, acceptance: '6.4%', tuition: '$57,000' },
+      { name: 'Stanford', ranking: 3, acceptance: '3.9%', tuition: '$56,000' },
+      {
+        name: 'Georgia Tech',
+        ranking: 4,
+        acceptance: '21%',
+        tuition: '$33,000',
+      },
+    ],
+  },
+  5: {
+    id: 5,
+    name: 'Data Science',
+    field: 'Технологии',
+    level: 'Master of Science (MS)',
+    duration: '2 года',
+    avgSalary: '$95,000',
+    universities: 100,
+    popular: true,
+    image: 'https://images.unsplash.com/photo-1611648694931-1aeda329f9da',
+    description:
+      'Data Science — анализ больших данных, машинное обучение и статистика. Одна из самых быстрорастущих специальностей в мире технологий.',
+    careers: [
+      {
+        title: 'Data Scientist',
+        salary: '$120,000',
+        demand: 'Очень высокий',
+        description: 'Анализ данных и ML',
+      },
+      {
+        title: 'ML Engineer',
+        salary: '$130,000',
+        demand: 'Очень высокий',
+        description: 'Разработка ML систем',
+      },
+      {
+        title: 'Data Engineer',
+        salary: '$115,000',
+        demand: 'Очень высокий',
+        description: 'Пайплайны данных',
+      },
+      {
+        title: 'Analytics Manager',
+        salary: '$125,000',
+        demand: 'Высокий',
+        description: 'Управление аналитикой',
+      },
+      {
+        title: 'Research Scientist',
+        salary: '$140,000',
+        demand: 'Высокий',
+        description: 'Научные исследования',
+      },
+      {
+        title: 'BI Analyst',
+        salary: '$90,000',
+        demand: 'Высокий',
+        description: 'Бизнес-аналитика',
+      },
+    ],
+    skills: [
+      'Python и R',
+      'Machine Learning',
+      'SQL и NoSQL',
+      'Статистика',
+      'Deep Learning',
+      'Визуализация данных',
+      'Big Data (Spark)',
+      'Cloud (AWS/GCP)',
+    ],
+    coursework: [
+      {
+        year: 1,
+        courses: [
+          'Статистика и вероятность',
+          'ML основы',
+          'SQL и базы данных',
+          'Python для Data Science',
+        ],
+      },
+      {
+        year: 2,
+        courses: ['Deep Learning', 'Big Data', 'NLP', 'Дипломный проект'],
+      },
+    ],
+    requirements: {
+      academic: [
+        'GPA минимум 3.5',
+        'Бакалавр в CS/Math/Stats',
+        'GRE: 160+ Quant',
+      ],
+      recommended: [
+        'Kaggle соревнования',
+        'Проекты на GitHub',
+        'Стажировка в tech компании',
+        'Публикации',
+      ],
+    },
+    topUniversities: [
+      { name: 'Stanford', ranking: 1, acceptance: '5%', tuition: '$57,000' },
+      { name: 'MIT', ranking: 2, acceptance: '6.7%', tuition: '$55,000' },
+      {
+        name: 'Carnegie Mellon',
+        ranking: 3,
+        acceptance: '15%',
+        tuition: '$50,000',
+      },
+      {
+        name: 'UC Berkeley',
+        ranking: 4,
+        acceptance: '14%',
+        tuition: '$30,000',
+      },
+    ],
+  },
+};

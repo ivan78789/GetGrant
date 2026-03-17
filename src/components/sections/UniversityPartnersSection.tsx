@@ -1,38 +1,34 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { UNIVERSITIES } from '../../data/universities/list';
+import { universityDetails } from '../../data/universities/details';
+export function UniversityPartnersSection() {
+  const navigate = useNavigate();
 
-interface UniversityPartnersSectionProps {
-  onNavigate?: (page: string) => void;
-  onCloseSideNav?: () => void;
-}
+  const partners = UNIVERSITIES.filter((u) => universityDetails[u.id]).slice(
+    0,
+    6,
+  );
 
-export function UniversityPartnersSection({ onNavigate, onCloseSideNav }: UniversityPartnersSectionProps) {
-  const partners = [
-    { name: 'Harvard', abbr: 'H' },
-    { name: 'MIT', abbr: 'MIT' },
-    { name: 'Stanford', abbr: 'S' },
-    { name: 'Oxford', abbr: 'OX' },
-    { name: 'Cambridge', abbr: 'CB' },
-    { name: 'Yale', abbr: 'Y' },
-    { name: 'Princeton', abbr: 'P' },
-    { name: 'Columbia', abbr: 'C' },
-    { name: 'UCL', abbr: 'UCL' },
-    { name: 'Imperial', abbr: 'IC' },
-    { name: 'ETH Zurich', abbr: 'ETH' },
-    { name: 'Toronto', abbr: 'UT' }
+  const colors = [
+    'bg-red-600',
+    'bg-blue-800',
+    'bg-red-700',
+    'bg-blue-900',
+    'bg-gray-800',
+    'bg-blue-700',
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-[#1A1A1A]">
+    <section className="py-16 md:py-24 bg-primary/10">
       <div className="container-custom">
-        {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
-          >
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Университеты-партнёры
           </motion.h2>
           <motion.p
@@ -40,58 +36,58 @@ export function UniversityPartnersSection({ onNavigate, onCloseSideNav }: Univer
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-[#6D7A89]"
-          >
+            className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Мы работаем с ведущими университетами мира
           </motion.p>
         </div>
 
-        {/* Partners Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8">
-          {partners.map((partner, index) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+          {partners.map((university, index) => (
             <motion.div
-              key={partner.name}
-              initial={{ opacity: 0, scale: 0.9 }}
+              key={university.id}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="aspect-square bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 transition-all duration-300 group cursor-pointer border border-white/10"
-              onClick={() => { onNavigate?.('university-detail'); onCloseSideNav?.(); }}
-            >
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-white group-hover:text-[#FCD232] transition-colors">
-                  {partner.abbr}
-                </div>
-                <div className="text-xs text-[#6D7A89] mt-1">{partner.name}</div>
+              className="bg-card rounded-2xl p-6 flex flex-col items-center justify-center hover:shadow-lg transition-all duration-300 cursor-pointer border border-border group"
+              onClick={() => navigate(`/universities/${university.id}`)}>
+              <div
+                className={`w-16 h-16 rounded-xl ${colors[index % colors.length]} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                <span className="text-2xl font-bold text-white">
+                  {university.logo ?? university.name.slice(0, 2)}
+                </span>
+              </div>
+              <div className="text-sm font-semibold text-foreground text-center leading-tight">
+                {university.name}
+              </div>
+              <div className="text-xs text-muted-foreground mt-1 text-center">
+                {university.country}
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Stats Row */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 pt-12 border-t border-white/10"
-        >
+          className="mt-16 pt-12 border-t border-border">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#FCD232] mb-2">50+</div>
-              <div className="text-sm text-[#6D7A89]">Университетов-партнёров</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#FCD232] mb-2">15+</div>
-              <div className="text-sm text-[#6D7A89]">Стран для обучения</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#FCD232] mb-2">500+</div>
-              <div className="text-sm text-[#6D7A89]">Поступивших студентов</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#FCD232] mb-2">95%</div>
-              <div className="text-sm text-[#6D7A89]">Уровень успеха</div>
-            </div>
+            {[
+              { value: '50+', label: 'Университетов-партнёров' },
+              { value: '15+', label: 'Стран для обучения' },
+              { value: '500+', label: 'Поступивших студентов' },
+              { value: '95%', label: 'Уровень успеха' },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

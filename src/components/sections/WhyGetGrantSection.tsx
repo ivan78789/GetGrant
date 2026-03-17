@@ -38,7 +38,7 @@ export function WhyGetGrantSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
@@ -46,7 +46,7 @@ export function WhyGetGrantSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
           >
             Почему GetGrant?
           </motion.h2>
@@ -55,7 +55,7 @@ export function WhyGetGrantSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-[#6D7A89] max-w-2xl mx-auto"
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
             Мы предоставляем комплексную поддержку для успешного поступления в зарубежные университеты
           </motion.p>
@@ -73,14 +73,14 @@ export function WhyGetGrantSection() {
             >
               <GetGrantCard hoverable className="h-full">
                 <div className="flex flex-col items-start gap-4">
-                  <div className="w-12 h-12 bg-[#FCD232] rounded-lg flex items-center justify-center">
-                    <feature.icon className="w-6 h-6 text-[#1A1A1A]" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center border border-primary/15">
+                    <feature.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2">
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-[#6D7A89]">
+                    <p className="text-muted-foreground">
                       {feature.description}
                     </p>
                   </div>
@@ -95,10 +95,10 @@ export function WhyGetGrantSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 bg-[#F5F5F5] rounded-2xl p-8 text-center"
+          className="mt-12 bg-muted rounded-2xl p-8 text-center border border-border"
         >
-          <p className="text-sm text-[#6D7A89] mb-2">Аккредитация и лицензии</p>
-          <p className="text-[#1A1A1A] font-medium">
+          <p className="text-sm text-muted-foreground mb-2">Аккредитация и лицензии</p>
+          <p className="text-foreground font-medium">
             Лицензия № 123456 | Аккредитация NAFSA | Член ассоциации ICEF
           </p>
         </motion.div>
