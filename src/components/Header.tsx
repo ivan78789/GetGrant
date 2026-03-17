@@ -36,8 +36,8 @@ export function Header({ isAuthenticated = false, onNavigate, onToggleSideNav, o
             className="flex items-center gap-2 focus:outline-none"
             aria-label="Перейти на главную"
           >
-            <div className="w-10 h-10 bg-[#1055b2] rounded-lg flex items-center justify-center">
-              <span className="text-[#ffffff] font-bold text-xl">G</span>
+            <div className="w-10 h-10 bg-[#FCD232] rounded-lg flex items-center justify-center">
+              <span className="text-[#1A1A1A] font-bold text-xl">G</span>
             </div>
             <span className="text-xl font-bold text-[#1A1A1A]">GetGrant</span>
           </button>
@@ -84,7 +84,7 @@ export function Header({ isAuthenticated = false, onNavigate, onToggleSideNav, o
               </>
             ) : (
               <button className="flex items-center gap-2 p-2 hover:bg-[#F5F5F5] rounded-lg transition-colors">
-                <div className="w-10 h-10 bg-[#1055b2] rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-[#FCD232] rounded-full flex items-center justify-center">
                   <User className="w-5 h-5 text-[#1A1A1A]" />
                 </div>
                 <ChevronDown className="w-4 h-4 text-[#6D7A89]" />

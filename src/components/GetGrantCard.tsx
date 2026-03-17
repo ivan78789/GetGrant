@@ -19,7 +19,7 @@ export function GetGrantCard({
       className={cn(
         'bg-white rounded-xl border border-[#1A1A1A]/10 p-6',
         'transition-all duration-300',
-        hoverable && 'hover:shadow-lg hover:border-[#1055b2] cursor-pointer hover:-translate-y-1',
+        hoverable && 'hover:shadow-lg hover:border-[#FCD232] cursor-pointer hover:-translate-y-1',
         className
       )}
       onClick={onClick}

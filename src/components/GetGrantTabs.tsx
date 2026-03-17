@@ -28,7 +28,7 @@ export function GetGrantTabs({ tabs, defaultTab, className }: GetGrantTabsProps)
                 'px-6 py-3 font-medium text-sm transition-all duration-200',
                 'border-b-2 whitespace-nowrap min-h-[44px]',
                 activeTab === tab.id
-                  ? 'border-[#1055b2] text-[#1A1A1A]'
+                  ? 'border-[#FCD232] text-[#1A1A1A]'
                   : 'border-transparent text-[#6D7A89] hover:text-[#1A1A1A] hover:border-[#1A1A1A]/20'
               )}
             >

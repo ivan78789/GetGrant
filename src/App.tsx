@@ -141,7 +141,7 @@ export default function App() {
             <Footer />
             {/* Mobile Sticky CTA */}
             <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-[#1A1A1A]/10 shadow-lg z-30">
-              <button className="w-full bg-[#1055b2] text-white font-medium py-3 px-6 rounded-lg hover:bg-[#003b8a] transition-colors min-h-[44px]">
+              <button className="w-full bg-[#FCD232] text-[#1A1A1A] font-medium py-3 px-6 rounded-lg hover:bg-[#e8c02e] transition-colors min-h-[44px]">
                 Получить консультацию
               </button>
             </div>
@@ -184,7 +184,7 @@ export default function App() {
                     onClick={() => { setCurrentPage(item.page); setNavOpen(false); }}
                     className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
                       currentPage === item.page
-                        ? 'bg-[#1055b2] text-white font-medium'
+                        ? 'bg-[#FCD232] text-[#1A1A1A] font-medium'
                         : 'hover:bg-[#F5F5F5] text-[#6D7A89]'
                     }`}
                   >
@@ -232,7 +232,7 @@ export default function App() {
                     onClick={() => { setCurrentPage(item.page); setNavOpen(false); }}
                     className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-colors ${
                       currentPage === item.page
-                        ? 'bg-[#1055b2] text-white font-medium'
+                        ? 'bg-[#FCD232] text-[#1A1A1A] font-medium'
                         : 'hover:bg-[#F5F5F5] text-[#6D7A89]'
                     }`}
                   >

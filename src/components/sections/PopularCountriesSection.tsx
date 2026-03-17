@@ -146,7 +146,7 @@ export function PopularCountriesSection({ onNavigate, onCloseSideNav }: PopularC
                 <ul className="space-y-2">
                   {country.points.map((point, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-[#1055b2] mt-1 flex-shrink-0" />
+                      <Check className="w-4 h-4 text-[#FCD232] mt-1 flex-shrink-0" />
                       <span className="text-sm text-[#1A1A1A]">{point}</span>
                     </li>
                   ))}

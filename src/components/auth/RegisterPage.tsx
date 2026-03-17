@@ -43,7 +43,7 @@ export function RegisterPage({ onSwitchToLogin, onNavigate, onCloseSideNav }: { 
               className="flex items-center justify-center gap-2 mb-8 focus:outline-none"
               aria-label="Перейти на главную"
             >
-              <div className="w-12 h-12 bg-[#1055b2] rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#FCD232] rounded-lg flex items-center justify-center">
                 <span className="text-[#1A1A1A] font-bold text-2xl">G</span>
               </div>
               <span className="text-2xl font-bold text-[#1A1A1A]">GetGrant</span>
@@ -100,7 +100,7 @@ export function RegisterPage({ onSwitchToLogin, onNavigate, onCloseSideNav }: { 
               <input
                 type="checkbox"
                 id="terms"
-                className="mt-1 w-4 h-4 border-[#1A1A1A]/20 rounded focus:ring-[#1055b2]"
+                className="mt-1 w-4 h-4 border-[#1A1A1A]/20 rounded focus:ring-[#FCD232]"
               />
               <label htmlFor="terms" className="text-sm text-[#6D7A89]">
                 Я соглашаюсь с{' '}
@@ -154,12 +154,12 @@ export function RegisterPage({ onSwitchToLogin, onNavigate, onCloseSideNav }: { 
                   onClick={() => handleRoleSelect('student')}
                   className={`w-full p-6 rounded-xl border-2 transition-all duration-200 text-left ${
                     selectedRole === 'student'
-                      ? 'border-[#1055b2] bg-[#1055b2]/10'
-                        : 'border-[#1A1A1A]/10 hover:border-[#1055b2]/50'
+                      ? 'border-[#FCD232] bg-[#FCD232]/10'
+                      : 'border-[#1A1A1A]/10 hover:border-[#FCD232]/50'
                   }`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#1055b2] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#FCD232] rounded-lg flex items-center justify-center flex-shrink-0">
                       <GraduationCap className="w-6 h-6 text-[#1A1A1A]" />
                     </div>
                     <div className="flex-1">
@@ -183,12 +183,12 @@ export function RegisterPage({ onSwitchToLogin, onNavigate, onCloseSideNav }: { 
                   onClick={() => handleRoleSelect('parent')}
                   className={`w-full p-6 rounded-xl border-2 transition-all duration-200 text-left ${
                     selectedRole === 'parent'
-                      ? 'border-[#1055b2] bg-[#1055b2]/10'
-                      : 'border-[#1A1A1A]/10 hover:border-[#1055b2]/50'
+                      ? 'border-[#FCD232] bg-[#FCD232]/10'
+                      : 'border-[#1A1A1A]/10 hover:border-[#FCD232]/50'
                   }`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#1055b2] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#FCD232] rounded-lg flex items-center justify-center flex-shrink-0">
                       <User className="w-6 h-6 text-[#1A1A1A]" />
                     </div>
                     <div className="flex-1">

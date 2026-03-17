@@ -46,7 +46,7 @@ export function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-[#1055b2] rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#FCD232] rounded-lg flex items-center justify-center">
                 <span className="text-[#1A1A1A] font-bold text-xl">G</span>
               </div>
               <span className="text-xl font-bold">GetGrant</span>
@@ -57,11 +57,11 @@ export function Footer() {
             
             {/* Contact Info */}
             <div className="space-y-3">
-              <a href="tel:+74951234567" className="flex items-center gap-2 text-[#6D7A89] hover:text-[#1055b2] transition-colors">
+              <a href="tel:+74951234567" className="flex items-center gap-2 text-[#6D7A89] hover:text-[#FCD232] transition-colors">
                 <Phone className="w-4 h-4" />
                 <span>+996 554 123 456 </span>
               </a>
-              <a href="mailto:info@getgrant.ru" className="flex items-center gap-2 text-[#6D7A89] hover:text-[#1055b2] transition-colors">
+              <a href="mailto:info@getgrant.ru" className="flex items-center gap-2 text-[#6D7A89] hover:text-[#FCD232] transition-colors">
                 <Mail className="w-4 h-4" />
                 <span>info@getgrant.kg</span>
               </a>
@@ -81,7 +81,7 @@ export function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-[#6D7A89] hover:text-[#1055b2] transition-colors"
+                      className="text-[#6D7A89] hover:text-[#FCD232] transition-colors"
                     >
                       {link.name}
                     </a>
@@ -101,7 +101,7 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#1055b2] text-white hover:text-[#1A1A1A] transition-all duration-200"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FCD232] text-white hover:text-[#1A1A1A] transition-all duration-200"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -115,13 +115,13 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#6D7A89]">
             <p>© 2025 GetGrant. Все права защищены.</p>
             <div className="flex flex-wrap gap-6">
-              <a href="#privacy" className="hover:text-[#1055b2] transition-colors">
+              <a href="#privacy" className="hover:text-[#FCD232] transition-colors">
                 Политика конфиденциальности
               </a>
-              <a href="#terms" className="hover:text-[#1055b2] transition-colors">
+              <a href="#terms" className="hover:text-[#FCD232] transition-colors">
                 Условия использования
               </a>
-              <a href="#licenses" className="hover:text-[#1055b2] transition-colors">
+              <a href="#licenses" className="hover:text-[#FCD232] transition-colors">
                 Лицензии
               </a>
             </div>

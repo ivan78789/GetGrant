@@ -62,7 +62,7 @@ export function LoginPage({ onSwitchToRegister, onNavigate, onCloseSideNav }: { 
             className="flex items-center justify-center gap-2 mb-8 focus:outline-none"
             aria-label="Перейти на главную"
           >
-            <div className="w-12 h-12 bg-[#1055b2] rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-[#FCD232] rounded-lg flex items-center justify-center">
               <span className="text-[#1A1A1A] font-bold text-2xl">G</span>
             </div>
             <span className="text-2xl font-bold text-[#1A1A1A]">GetGrant</span>
@@ -183,7 +183,7 @@ export function LoginPage({ onSwitchToRegister, onNavigate, onCloseSideNav }: { 
               maxLength={1}
               value={value}
               onChange={(e) => handleOTPChange(index, e.target.value)}
-              className="w-12 h-12 text-center text-xl font-semibold border-2 border-[#1A1A1A]/10 rounded-lg focus:border-[#1055b2] focus:outline-none transition-colors"
+              className="w-12 h-12 text-center text-xl font-semibold border-2 border-[#1A1A1A]/10 rounded-lg focus:border-[#FCD232] focus:outline-none transition-colors"
             />
           ))}
         </div>

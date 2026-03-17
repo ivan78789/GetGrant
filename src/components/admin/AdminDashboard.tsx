@@ -120,7 +120,7 @@ export function AdminDashboard() {
                 <input
                   type="text"
                   placeholder="Поиск пользователей..."
-                  className="w-full pl-10 pr-4 py-2 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1055b2]"
+                  className="w-full pl-10 pr-4 py-2 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FCD232]"
                 />
               </div>
               <GetGrantButton variant="outline" size="sm">
@@ -239,7 +239,7 @@ export function AdminDashboard() {
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-1">
                         <span className="font-semibold text-[#1A1A1A]">{manager.rating}</span>
-                        <span className="text-[#1055b2]">★</span>
+                        <span className="text-[#FCD232]">★</span>
                       </div>
                     </td>
                     <td className="py-3 px-4">
@@ -345,7 +345,7 @@ export function AdminDashboard() {
                 <GetGrantCardContent>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-[#1055b2] rounded-lg flex items-center justify-center">
+                      <div className="w-12 h-12 bg-[#FCD232] rounded-lg flex items-center justify-center">
                         <FileText className="w-6 h-6 text-[#1A1A1A]" />
                       </div>
                       <div>
@@ -402,7 +402,7 @@ export function AdminDashboard() {
                     <p className="text-3xl font-bold text-[#1A1A1A] mb-1">{stat.value}</p>
                     <p className="text-sm text-green-600">{stat.change}</p>
                   </div>
-                    <div className="w-12 h-12 bg-[#1055b2]/20 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#FCD232]/20 rounded-lg flex items-center justify-center">
                     <stat.icon className="w-6 h-6 text-[#1A1A1A]" />
                   </div>
                 </div>
@@ -437,14 +437,14 @@ export function AdminDashboard() {
           <GetGrantInput label="Телефон" type="tel" placeholder="+7 (999) 123-45-67" />
           <div>
             <label className="block text-sm font-medium text-[#1A1A1A] mb-2">Роль</label>
-              <select className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1055b2]">
+            <select className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FCD232]">
               <option>Студент</option>
               <option>Родитель</option>
             </select>
           </div>
           <div>
             <label className="block text-sm font-medium text-[#1A1A1A] mb-2">Менеджер</label>
-              <select className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1055b2]">
+            <select className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FCD232]">
               <option>Анна Петрова</option>
               <option>Елена Иванова</option>
               <option>Дмитрий Смирнов</option>
@@ -468,7 +468,7 @@ export function AdminDashboard() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-[#1A1A1A] mb-2">Страна</label>
-                <select className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1055b2]">
+              <select className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FCD232]">
                 <option>США</option>
                 <option>Великобритания</option>
                 <option>Канада</option>
@@ -483,10 +483,10 @@ export function AdminDashboard() {
           </div>
           <div>
             <label className="block text-sm font-medium text-[#1A1A1A] mb-2">Описание</label>
-              <textarea
+            <textarea
               rows={4}
               placeholder="Краткое описание университета..."
-                className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1055b2]"
+              className="w-full px-4 py-3 bg-[#F5F5F5] border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FCD232]"
             />
           </div>
           <GetGrantButton variant="primary" size="lg" className="w-full">

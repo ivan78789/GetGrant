@@ -73,7 +73,7 @@ export function WhyGetGrantSection() {
             >
               <GetGrantCard hoverable className="h-full">
                 <div className="flex flex-col items-start gap-4">
-                  <div className="w-12 h-12 bg-[#1055b2] rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#FCD232] rounded-lg flex items-center justify-center">
                     <feature.icon className="w-6 h-6 text-[#1A1A1A]" />
                   </div>
                   <div>

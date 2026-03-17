@@ -1,11 +1,88 @@
+# GetGrant Web Platform
 
-  # GetGrant Web Platform Design
+GetGrant - это образовательная платформа, помогающая студентам получить гранты и стипендии для обучения за рубежом. Платформа предоставляет комплексные услуги: от консультаций по выбору университетов и программ до подготовки документов и сопровождения процесса поступления.
 
-  This is a code bundle for GetGrant Web Platform Design. The original project is available at https://www.figma.com/design/G3Xmsvlaos2tDonUtgsP3d/GetGrant-Web-Platform-Design.
+## Описание проекта
 
-  ## Running the code
+Платформа включает:
 
-  Run `npm i` to install the dependencies.
+- Каталог университетов и программ
+- Онлайн-курсы подготовки
+- Личный кабинет студента с трекингом прогресса
+- Админ-панель для управления контентом
+- Система консультаций и поддержки
 
-  Run `npm run dev` to start the development server.
-  
+## Технологии
+
+- **Frontend**: React 18, TypeScript, Vite
+- **UI Framework**: Tailwind CSS, Radix UI
+- **Charts**: Recharts
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **State Management**: React Context
+- **Forms**: React Hook Form
+
+## Установка и запуск
+
+1. Установите зависимости:
+
+   ```bash
+   npm install
+   ```
+
+2. Запустите development сервер:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Откройте http://localhost:5173 в браузере
+
+## Структура проекта
+
+```
+src/
+├── components/          # UI компоненты
+│   ├── ui/             # Базовые UI компоненты (shadcn/ui)
+│   ├── sections/       # Секции главной страницы
+│   ├── auth/           # Компоненты авторизации
+│   ├── dashboard/      # Компоненты дашборда
+│   ├── admin/          # Админ-панель
+│   └── ...
+├── context/            # React Context
+├── data/               # Статические данные
+├── lib/                # Утилиты и API
+├── styles/             # Стили
+└── types/              # TypeScript типы
+```
+
+## API
+
+Платформа использует REST API для:
+
+- Отправки консультационных запросов
+- Управления контентом (университеты, программы)
+- Аутентификации пользователей
+
+## Разработка
+
+Проект использует современные практики:
+
+- TypeScript для типизации
+- ESLint для линтинга
+- Prettier для форматирования
+- Tailwind CSS для стилизации
+- Компонентный подход с shadcn/ui
+
+## Контакты
+
+Для вопросов по проекту обращайтесь к разработчикам.
+
+## Окружение
+
+Добавьте в корень проекта файл с переменными окружения. Пример доступен в файле `.env.example`.
+
+- `VITE_API_BASE_URL` — базовый URL для запросов к бэкенду (например, `https://api.getgrant.example.com`). Если не указан, по умолчанию используется пустая строка и запросы будут отправляться относительно текущего хоста.
+
+Консультационная форма в фронтенде отправляет POST-запрос на `"${VITE_API_BASE_URL}/api/consultation"`.
+# GetGrant
