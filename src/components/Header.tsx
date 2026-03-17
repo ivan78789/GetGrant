@@ -1,52 +1,29 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // ← ДОБАВИЛИ useNavigate!
-import { Menu, X, ChevronDown, User, Phone } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X, User, Phone } from 'lucide-react';
 import { GetGrantButton } from './GetGrantButton';
-import { cn } from '../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useConsultation } from '../context/ConsultationContext';
-
-type Page =
-  | 'home'
-  | 'login'
-  | 'register'
-  | 'dashboard'
-  | 'universities'
-  | 'university-detail'
-  | 'countries'
-  | 'country-detail'
-  | 'programs'
-  | 'program-detail'
-  | 'courses'
-  | 'admin';
 
 interface HeaderProps {
   isAuthenticated?: boolean;
-  // onNavigate больше не нужен! Убираем его
-  onToggleSideNav?: () => void;
   onCloseSideNav?: () => void;
 }
 
 export function Header({
   isAuthenticated = false,
-  onToggleSideNav,
   onCloseSideNav,
 }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { openConsultation } = useConsultation();
-  const navigate = useNavigate(); // ← ВОТ ЭТО ИСПОЛЬЗУЕМ!
+  const navigate = useNavigate();
 
   const navigation = [
-    {
-      name: 'Университеты',
-      path: '/universities',
-      page: 'universities' as Page,
-    },
-    { name: 'Страны', path: '/countries', page: 'countries' as Page },
-    { name: 'Программы', path: '/programs', page: 'programs' as Page },
-    { name: 'Онлайн-подготовка', path: '/courses', page: 'courses' as Page },
-    { name: 'О нас', path: '/about', page: 'home' as Page },
+    { name: 'Университеты', path: '/universities' },
+    { name: 'Страны', path: '/countries' },
+    { name: 'Программы', path: '/programs' },
+    { name: 'Онлайн-подготовка', path: '/courses' },
+    { name: 'О нас', path: '/about' },
   ];
 
   const handleNavigation = (path: string) => {
@@ -58,34 +35,34 @@ export function Header({
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo - теперь Link вместо button */}
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
           <Link
             to="/"
-            onClick={() => onCloseSideNav?.()}
-            className="flex items-center gap-2 focus:outline-none"
-            aria-label="Перейти на главную">
-            <ImageWithFallback
-              src="/favicon.ico"
-              alt="GetGrant Logo"
-              className="h-10 w-auto object-contain"
-            />
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onCloseSideNav?.();
+            }}
+            className="flex items-center gap-2 focus:outline-none flex-shrink-0">
+            <span className="w-20 h-14 mt-20px flex items-center justify-center">
+              <img src="../../public/favicon.ico" alt="GetGrant" />
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-4 lg:gap-8">
+          {/* Desktop Navigation — только от lg (1024px) */}
+          <nav className="hidden xl:flex items-center gap-6 xl:gap-8">
             {navigation.map((item) => (
               <button
                 key={item.name}
                 onClick={() => handleNavigation(item.path)}
-                className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer text-sm lg:text-base">
+                className="text-foreground hover:text-primary transition-colors font-medium text-sm xl:text-base whitespace-nowrap">
                 {item.name}
               </button>
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-2 lg:gap-4">
+          {/* Desktop CTA — только от lg */}
+          <div className="hidden xl:flex items-center gap-3">
             {!isAuthenticated ? (
               <>
                 <GetGrantButton
@@ -102,25 +79,29 @@ export function Header({
                 </GetGrantButton>
               </>
             ) : (
-              <button className="flex items-center gap-2 p-2 hover:bg-muted rounded-lg transition-colors">
-                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-primary rounded-full flex items-center justify-center">
-                  <User className="w-4 h-4 lg:w-5 lg:h-5 text-primary-foreground" />
+              <button
+                onClick={() => handleNavigation('/dashboard')}
+                className="flex items-center gap-2 p-2 hover:bg-muted rounded-lg transition-colors">
+                <div className="w-9 h-9 bg-primary rounded-full flex items-center justify-center">
+                  <User className="w-5 h-5 text-primary-foreground" />
                 </div>
-                <ChevronDown className="w-4 h-4 text-muted-foreground" />
               </button>
             )}
           </div>
 
-          {/* Mobile: Phone + Menu buttons */}
-          <div className="md:hidden flex items-center gap-2">
+          {/* Планшет + мобилка — бургер */}
+          <div className="xl:hidden flex items-center gap-2">
+            {/* Кнопка звонка */}
             <button
               aria-label="Получить консультацию"
               onClick={() => openConsultation({ source: 'header-cta-mobile' })}
-              className="p-2 rounded-full bg-primary flex items-center justify-center w-11 h-11">
+              className="p-2 rounded-full bg-primary flex items-center justify-center w-10 h-10 flex-shrink-0">
               <Phone className="w-5 h-5 text-primary-foreground" />
             </button>
 
+            {/* Бургер */}
             <button
+              aria-label={mobileMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
               className="p-2 hover:bg-muted rounded-lg transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? (
@@ -133,40 +114,43 @@ export function Header({
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Мобильное/планшетное меню */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-border bg-background overflow-hidden">
+            transition={{ duration: 0.2 }}
+            className="xl:hidden border-t border-border bg-background overflow-hidden">
             <div className="container-custom py-4">
-              <nav className="flex flex-col gap-2">
+              {/* Nav links */}
+              <nav className="flex flex-col gap-1">
                 {navigation.map((item) => (
                   <button
                     key={item.name}
                     onClick={() => handleNavigation(item.path)}
-                    className="px-4 py-3 text-left text-foreground hover:bg-muted rounded-lg transition-colors font-medium cursor-pointer">
+                    className="px-4 py-3 text-left text-foreground hover:bg-muted rounded-lg transition-colors font-medium text-base">
                     {item.name}
                   </button>
                 ))}
               </nav>
 
+              {/* Auth buttons */}
               <div className="mt-4 pt-4 border-t border-border">
                 {!isAuthenticated ? (
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <GetGrantButton
                       variant="outline"
                       size="md"
-                      className="w-full"
+                      className="flex-1"
                       onClick={() => handleNavigation('/login')}>
                       Войти
                     </GetGrantButton>
                     <GetGrantButton
                       variant="primary"
                       size="md"
-                      className="w-full"
+                      className="flex-1"
                       onClick={() => {
                         setMobileMenuOpen(false);
                         openConsultation({ source: 'mobile-menu-cta' });
@@ -175,13 +159,22 @@ export function Header({
                     </GetGrantButton>
                   </div>
                 ) : (
-                  <GetGrantButton
-                    variant="outline"
-                    size="md"
-                    className="w-full"
-                    onClick={() => handleNavigation('/dashboard')}>
-                    Личный кабинет
-                  </GetGrantButton>
+                  <div className="flex flex-col gap-2">
+                    <GetGrantButton
+                      variant="outline"
+                      size="md"
+                      className="w-full"
+                      onClick={() => handleNavigation('/dashboard')}>
+                      Личный кабинет
+                    </GetGrantButton>
+                    <GetGrantButton
+                      variant="ghost"
+                      size="md"
+                      className="w-full"
+                      onClick={() => handleNavigation('/login')}>
+                      Выйти
+                    </GetGrantButton>
+                  </div>
                 )}
               </div>
             </div>

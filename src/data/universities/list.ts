@@ -1,5 +1,4 @@
 import type { University } from '../../types/university';
-
 export const UNIVERSITIES: University[] = [
   {
     id: 1,

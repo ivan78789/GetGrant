@@ -1,116 +1,79 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  GetGrantCard,
-  GetGrantCardHeader,
-  GetGrantCardContent,
-  GetGrantCardFooter,
-} from '../GetGrantCard';
+import { GetGrantCard, GetGrantCardContent } from '../GetGrantCard';
 import { GetGrantButton } from '../GetGrantButton';
 import { GetGrantBadge } from '../GetGrantBadge';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
-import { Clock, Users } from 'lucide-react';
-import { motion } from 'motion/react';
+import { Clock, TrendingUp } from 'lucide-react';
+import { EmblaCarousel, EmblaSlide } from '../carousel/EmblaCarousel';
 import { PROGRAMS } from '../../data/programs/list';
 
 export function PopularProgramsSection() {
   const navigate = useNavigate();
 
-  const popularPrograms = PROGRAMS.filter((p) => p.popular).slice(0, 4);
-
   return (
-    <section className="py-16 md:py-24 bg-muted">
-      <div className="container-custom">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
-          <div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-              Популярные программы
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-muted-foreground">
-              Выбирайте из топовых образовательных программ мира
-            </motion.p>
-          </div>
-          <GetGrantButton
-            variant="outline"
-            onClick={() => navigate('/programs')}>
-            Все программы
-          </GetGrantButton>
-        </div>
+    <EmblaCarousel
+      title="Популярные программы"
+      subtitle="Выбирайте из топовых образовательных программ мира"
+      className="bg-muted py-16 md:py-24">
+      {PROGRAMS.map((program) => (
+        <EmblaSlide key={program.id}>
+          <GetGrantCard
+            hoverable
+            className="h-full cursor-pointer"
+            onClick={() => navigate(`/programs/${program.id}`)}>
+            <div className="relative h-44 overflow-hidden rounded-t-xl -mx-4 -mt-4 mb-4">
+              <ImageWithFallback
+                src={program.image}
+                alt={program.name}
+                className="w-full h-full object-cover"
+              />
+              {program.popular && (
+                <div className="absolute top-3 left-3">
+                  <GetGrantBadge variant="yellow">Популярно</GetGrantBadge>
+                </div>
+              )}
+              <div className="absolute top-3 right-3">
+                <GetGrantBadge variant="default">{program.field}</GetGrantBadge>
+              </div>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {popularPrograms.map((program, index) => (
-            <motion.div
-              key={program.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}>
-              <GetGrantCard
-                hoverable
-                className="h-full cursor-pointer"
-                onClick={() => navigate(`/programs/${program.id}`)}>
-                <GetGrantCardHeader className="relative p-0 mb-4">
-                  <div className="relative w-full h-0 pb-[56.25%] rounded-lg overflow-hidden">
-                    <ImageWithFallback
-                      src={program.image}
-                      alt={program.name}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    {program.popular && (
-                      <div className="absolute top-3 left-3">
-                        <GetGrantBadge variant="yellow">
-                          Популярно
-                        </GetGrantBadge>
-                      </div>
-                    )}
-                  </div>
-                </GetGrantCardHeader>
+            <GetGrantCardContent className="px-0 pb-0">
+              <div className="flex items-start justify-between gap-2 mb-3">
+                <h3 className="text-lg font-semibold text-foreground leading-tight">
+                  {program.name}
+                </h3>
+                <GetGrantBadge variant="outline" className="flex-shrink-0">
+                  {program.level}
+                </GetGrantBadge>
+              </div>
 
-                <GetGrantCardContent>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    {program.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    {program.field}
-                  </p>
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      <span>{program.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-3 h-3" />
-                      <span>{program.universities} ВУЗов</span>
-                    </div>
-                  </div>
-                </GetGrantCardContent>
+              <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+                <div className="flex items-center gap-1">
+                  <Clock className="w-4 h-4" />
+                  <span>{program.duration}</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <TrendingUp className="w-4 h-4 text-primary" />
+                  <span className="font-medium text-foreground">
+                    {program.avgSalary}
+                  </span>
+                </div>
+              </div>
 
-                <GetGrantCardFooter>
-                  <GetGrantButton
-                    variant="outline"
-                    size="sm"
-                    className="w-full"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(`/programs/${program.id}`);
-                    }}>
-                    Подробнее
-                  </GetGrantButton>
-                </GetGrantCardFooter>
-              </GetGrantCard>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+              <div className="flex flex-wrap gap-1">
+                {program.careers.slice(0, 2).map((c) => (
+                  <span
+                    key={c}
+                    className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </GetGrantCardContent>
+          </GetGrantCard>
+        </EmblaSlide>
+      ))}
+    </EmblaCarousel>
   );
 }

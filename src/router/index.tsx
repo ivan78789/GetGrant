@@ -2,6 +2,7 @@ import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import App from '../App';
 import { HomePage } from '../pages/HomePage';
 import { NotFoundPage } from '../pages/NotFoundPage';
+import { AboutPage } from '../pages/AboutPage';
 
 import { LoginPage } from '../pages/auth/LoginPage';
 import { RegisterPage } from '../pages/auth/RegisterPage';
@@ -21,35 +22,20 @@ const routes: RouteObject[] = [
     element: <App />,
     children: [
       { index: true, element: <HomePage /> },
-
-      // Университеты
+      { path: 'about', element: <AboutPage /> },
       { path: 'universities', element: <UniversitiesPage /> },
       { path: 'universities/:id', element: <UniversityDetailPage /> },
-
-      // Страны
       { path: 'countries', element: <CountryCatalogPage /> },
       { path: 'countries/:id', element: <CountryDetailPage /> },
-
-      // Программы
       { path: 'programs', element: <ProgramCatalogPage /> },
       { path: 'programs/:id', element: <ProgramDetailPage /> },
-
-      // Курсы
       { path: 'courses', element: <OnlineCoursesPage /> },
-
-      // Личный кабинет
       { path: 'dashboard', element: <DashboardPage /> },
-
-      // Админка
       { path: 'admin', element: <AdminDashboard /> },
     ],
   },
-
-  // Аутентификация (без Header/Footer)
   { path: 'login', element: <LoginPage onSwitchToRegister={() => {}} /> },
   { path: 'register', element: <RegisterPage onSwitchToLogin={() => {}} /> },
-
-  // 404
   { path: '*', element: <NotFoundPage /> },
 ];
 

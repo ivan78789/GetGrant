@@ -11,88 +11,7 @@ import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
 import { Filter, X, Search, Grid, List, MapPin, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import type { University } from '../../types/university';
-
-// Данные выносим в отдельный файл или хотя бы типизируем
-const universities: University[] = [
-  {
-    id: 1,
-    name: 'Harvard University',
-    country: 'США',
-    city: 'Cambridge, MA',
-    image: 'https://via.placeholder.com/400x300/3261fc/ffffff?text=Harvard',
-    tuition: '$54,000',
-    programs: 120,
-    acceptance: '4.5%',
-    type: 'Частный',
-    featured: true,
-    ranking: 1,
-  },
-  {
-    id: 2,
-    name: 'Oxford University',
-    country: 'Великобритания',
-    city: 'Oxford',
-    image: 'https://via.placeholder.com/400x300/3261fc/ffffff?text=Oxford',
-    tuition: '£35,000',
-    programs: 95,
-    acceptance: '17.5%',
-    type: 'Государственный',
-    featured: true,
-    ranking: 2,
-  },
-  {
-    id: 3,
-    name: 'Stanford University',
-    country: 'США',
-    city: 'Stanford, CA',
-    image: 'https://via.placeholder.com/400x300/3261fc/ffffff?text=Stanford',
-    tuition: '$56,000',
-    programs: 110,
-    acceptance: '3.9%',
-    type: 'Частный',
-    featured: false,
-    ranking: 3,
-  },
-  {
-    id: 4,
-    name: 'Cambridge University',
-    country: 'Великобритания',
-    city: 'Cambridge',
-    image: 'https://via.placeholder.com/400x300/3261fc/ffffff?text=Cambridge',
-    tuition: '£34,000',
-    programs: 88,
-    acceptance: '21%',
-    type: 'Государственный',
-    featured: false,
-    ranking: 4,
-  },
-  {
-    id: 5,
-    name: 'MIT',
-    country: 'США',
-    city: 'Cambridge, MA',
-    image: 'https://via.placeholder.com/400x300/3261fc/ffffff?text=MIT',
-    tuition: '$55,000',
-    programs: 75,
-    acceptance: '6.7%',
-    type: 'Частный',
-    featured: true,
-    ranking: 5,
-  },
-  {
-    id: 6,
-    name: 'Yale University',
-    country: 'США',
-    city: 'New Haven, CT',
-    image: 'https://via.placeholder.com/400x300/3261fc/ffffff?text=Yale',
-    tuition: '$57,000',
-    programs: 105,
-    acceptance: '5.3%',
-    type: 'Частный',
-    featured: false,
-    ranking: 6,
-  },
-];
+import { UNIVERSITIES } from '../../data/universities/list';
 
 // Константы выносим из компонента
 const COUNTRIES = ['США', 'Великобритания', 'Канада', 'Германия', 'Австралия'];
@@ -229,7 +148,7 @@ export function UniversitiesPage() {
   const [selectedTypes, setSelectedTypes] = useState<University['type'][]>([]);
 
   // Фильтрация университетов (простой пример)
-  const filteredUniversities = universities.filter((uni) => {
+  const filteredUniversities = UNIVERSITIES.filter((uni) => {
     if (selectedCountries.length && !selectedCountries.includes(uni.country)) {
       return false;
     }
