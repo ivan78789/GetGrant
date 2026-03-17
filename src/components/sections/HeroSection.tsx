@@ -10,7 +10,7 @@ export function HeroSection() {
   const stats = [
     { value: '500+', label: 'Поступивших студентов' },
     { value: '50+', label: 'Университетов-партнёров' },
-    { value: '15+', label: 'Стран для обучения' }
+    { value: '15+', label: 'Стран для обучения' },
   ];
 
   return (
@@ -22,8 +22,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
+            className="space-y-8">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/15">
               <Star className="w-4 h-4 text-primary fill-primary" />
@@ -42,8 +41,8 @@ export function HeroSection() {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
-                Профессиональная подготовка и полное сопровождение для учеников 9–11 классов. 
-                От выбора университета до успешного поступления.
+                Профессиональная подготовка и полное сопровождение для учеников
+                9–11 классов. От выбора университета до успешного поступления.
               </p>
             </div>
 
@@ -53,11 +52,14 @@ export function HeroSection() {
                 variant="primary"
                 size="lg"
                 className="group"
-                onClick={() => openConsultation({ source: 'hero-cta' })}
-              >
+                onClick={() => openConsultation({ source: 'hero-cta' })}>
                 Получить консультацию
               </GetGrantButton>
-              <GetGrantButton variant="outline" size="lg">
+              <GetGrantButton
+                variant="outline"
+                size="lg"
+                className="group"
+                onClick={() => openConsultation({ source: 'hero-cta' })}>
                 Начать подготовку
               </GetGrantButton>
             </div>
@@ -70,8 +72,7 @@ export function HeroSection() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + index * 0.1 }}
-                  className="space-y-1"
-                >
+                  className="space-y-1">
                   <div className="text-2xl md:text-3xl font-bold text-foreground">
                     {stat.value}
                   </div>
@@ -88,22 +89,20 @@ export function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
+            className="relative">
             <div className="relative aspect-square lg:aspect-auto lg:h-[600px] rounded-2xl overflow-hidden">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1758270705518-b61b40527e76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHN0dWR5aW5nJTIwdG9nZXRoZXIlMjB1bml2ZXJzaXR5fGVufDF8fHx8MTc2NDA1ODMzMHww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Students studying together"
                 className="w-full h-full object-cover"
               />
-              
+
               {/* Floating Cards */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
-                className="absolute bottom-8 left-8 right-8 bg-background/90 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-border"
-              >
+                className="absolute bottom-8 left-8 right-8 bg-background/90 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-border">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                     <span className="text-2xl">🎓</span>
