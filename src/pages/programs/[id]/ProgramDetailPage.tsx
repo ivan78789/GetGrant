@@ -341,7 +341,10 @@ export function ProgramDetailPage() {
                 Наши эксперты помогут выбрать университет, подготовить документы
                 и успешно поступить
               </p>
-              <GetGrantButton variant="primary" size="lg">
+              <GetGrantButton
+                variant="primary"
+                size="lg"
+                onClick={() => openConsultation({ source: 'hero-cta' })}>
                 Начать подготовку
               </GetGrantButton>
             </GetGrantCardContent>

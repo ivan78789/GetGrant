@@ -17,9 +17,7 @@ export function GetGrantInput({
   return (
     <div className="w-full">
       {label && (
-        <label className="block mb-2 text-sm text-foreground">
-          {label}
-        </label>
+        <label className="block mb-2 text-sm text-foreground">{label}</label>
       )}
       <div className="relative">
         {icon && (
@@ -29,20 +27,17 @@ export function GetGrantInput({
         )}
         <input
           className={cn(
-            'w-full px-4 py-3 min-h-[44px] bg-input-background border border-transparent rounded-lg',
+            'w-full px-4 py-3 min-h-[44px] bg-background border border-border/40 rounded-lg shadow-sm',
             'text-foreground placeholder:text-muted-foreground',
-            'focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent',
-            'transition-all duration-200',
+            'focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent focus:shadow-md',
             error && 'border-red-500 focus:ring-red-500',
             icon && 'pl-10',
-            className
+            className,
           )}
           {...props}
         />
       </div>
-      {error && (
-        <p className="mt-1 text-sm text-red-500">{error}</p>
-      )}
+      {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
     </div>
   );
 }

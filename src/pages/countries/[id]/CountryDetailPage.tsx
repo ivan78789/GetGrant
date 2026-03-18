@@ -68,6 +68,43 @@ export function CountryDetailPage() {
   return (
     <div className="min-h-screen bg-muted">
       {/* Hero */}
+      {/* Hero */}
+      <div
+        className="relative text-white overflow-hidden"
+        style={{ minHeight: '320px' }}>
+        {/* Фоновая картинка */}
+        {detail.image ? (
+          <img
+            src={detail.image}
+            alt={detail.name.ru}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-secondary" />
+        )}
+        {/* Затемнение */}
+        <div className="absolute inset-0 bg-black/50" />
+
+        {/* Контент */}
+        <div className="relative container-custom py-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-6">
+            <div className="text-8xl">{detail.flag}</div>
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                {detail.name.ru}
+              </h1>
+              {detail.overview.ru && (
+                <p className="max-w-3xl text-white/80 leading-relaxed">
+                  {detail.overview.ru}
+                </p>
+              )}
+            </div>
+          </motion.div>
+        </div>
+      </div>
       <div className="bg-secondary text-secondary-foreground py-16">
         <div className="container-custom">
           <motion.div

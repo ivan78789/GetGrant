@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // ← ДОБАВИТЬ!
+import { useNavigate } from 'react-router-dom';
 import {
   GetGrantCard,
   GetGrantCardContent,
@@ -9,12 +9,12 @@ import { motion } from 'motion/react';
 import { COUNTRIES } from '../../data/countries/list';
 
 export function CountryCatalogPage() {
-  // ← УБРАЛИ PROPS!
-  const navigate = useNavigate(); // ← ДОБАВИТЬ!
+  
+  const navigate = useNavigate();
   const countries = COUNTRIES;
 
   const handleCountryClick = (countryId: string) => {
-    navigate(`/countries/${countryId}`); // ← ИСПРАВЛЕНО!
+    navigate(`/countries/${countryId}`);
   };
 
   return (
@@ -44,36 +44,53 @@ export function CountryCatalogPage() {
               transition={{ delay: index * 0.05 }}>
               <GetGrantCard
                 hoverable
-                className="h-full cursor-pointer"
+                className="h-full cursor-pointer overflow-hidden p-0"
                 onClick={() => handleCountryClick(country.id)}>
-                {' '}
-                {/* ← ИСПРАВЛЕНО! */}
-                <GetGrantCardContent>
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="text-6xl">{country.flag}</div>
-                    <div className="flex-1">
-                      <h2 className="text-2xl font-bold text-foreground mb-1">
+                {/* Картинка */}
+                <div className="h-44 overflow-hidden bg-muted">
+                  {country.image ? (
+                    <img
+                      src={country.image}
+                      alt={country.name.ru}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-7xl">
+                      {country.flag}
+                    </div>
+                  )}
+                </div>
+
+                <GetGrantCardContent className="p-5">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/20 flex-shrink-0">
+                      <span className="text-sm font-bold text-primary tracking-widest">
+                        {country.id.toUpperCase()}
+                      </span>
+                    </div>
+                    <div className="min-w-0">
+                      <h2 className="text-lg font-bold text-foreground leading-tight truncate">
                         {country.name.ru}
                       </h2>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-xs text-muted-foreground truncate">
                         {country.name.en}
                       </p>
                     </div>
                   </div>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-5 line-clamp-3">
                     {country.overview.ru}
                   </p>
 
                   <GetGrantButton
-                    variant="ghost"
+                    variant="outline"
                     size="sm"
                     className="w-full"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleCountryClick(country.id);
                     }}>
-                    Подробнее о стране
+                    Подробнее о стране →
                   </GetGrantButton>
                 </GetGrantCardContent>
               </GetGrantCard>

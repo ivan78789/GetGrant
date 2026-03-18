@@ -27,7 +27,7 @@ export function ConsultationModal() {
       setErrors({});
       setValues((prev) => ({
         ...prev,
-        message: preset?.message ?? '',
+        message: '',
         source: preset?.source,
       }));
     }
@@ -126,7 +126,7 @@ export function ConsultationModal() {
               setValues((v) => ({ ...v, message: e.target.value }))
             }
             placeholder="Например: интересуют страны/визы/пакет сопровождения…"
-            className="w-full px-4 py-3 bg-input-background border border-transparent rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200"
+            className="w-full px-4 py-3 bg-background border border-border/40 rounded-lg shadow-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:shadow-md transition-all duration-200 resize-none"
           />
         </div>
 

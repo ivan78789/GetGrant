@@ -17,10 +17,11 @@ export function GetGrantCard({
   return (
     <div
       className={cn(
-        'relative bg-card text-card-foreground rounded-2xl border border-border p-6 shadow-sm overflow-hidden',
+        'relative bg-card text-card-foreground rounded-2xl border border-border/20 p-6 overflow-hidden',
+        'shadow-[0_2px_8px_rgba(0,0,0,0.12)]',
         'transition-all duration-300',
         hoverable &&
-          'hover:shadow-lg hover:border-primary cursor-pointer hover:-translate-y-1',
+          'hover:shadow-[0_8px_20px_rgba(0,0,0,0.18)] hover:border-border/40 cursor-pointer hover:-translate-y-0.5',
         className,
       )}
       onClick={onClick}>

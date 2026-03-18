@@ -76,8 +76,8 @@ export function EmblaCarousel({
           </div>
         </div>
 
-        <div ref={emblaRef} className="overflow-hidden">
-          <div className="flex gap-4">{children}</div>
+        <div ref={emblaRef} className="overflow-hidden -mx-1 px-1">
+          <div className="flex gap-4 py-2">{children}</div>
         </div>
       </div>
     </section>

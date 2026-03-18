@@ -1,6 +1,7 @@
 export interface Country {
   id: string;
   flag: string;
+  image?: string;
   name: {
     ru: string;
     en: string;
